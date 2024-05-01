@@ -535,7 +535,7 @@ tester or are just interested in discovering the underlying technologies of a gi
 ];
 
 export const license = `The MIT License (MIT)
-Copyright (c) KhulnaSoft DevOps <alicia@omg.com> 
+Copyright (c) KhulnaSoft DevOps <security@khulnasoft.com> 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal 

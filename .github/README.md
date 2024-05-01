@@ -71,9 +71,6 @@ The aim is to help you easily understand, optimize and secure your website.
 ### Live Demo
 A hosted version can be accessed at: **[webscan.khulnasoft.com](https://webscan.khulnasoft.com)**
 
-### Mirror
-The source for this repo is mirrored to CodeBerg, available at: **[codeberg.org/alicia/web-scan](https://codeberg.org/alicia/web-scan)**
-
 ### Status
 
 
@@ -878,7 +875,7 @@ Some checks also require `chromium`, `traceroute` and `dns` to be installed with
 
 ```
 The MIT License (MIT)
-Copyright (c) KhulnaSoft DevOps <alicia@omg.com> 
+Copyright (c) KhulnaSoft DevOps <security@khulnasoft.com> 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal 
