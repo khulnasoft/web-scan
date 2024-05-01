@@ -75,7 +75,7 @@ A hosted version can be accessed at: **[webscan.khulnasoft.com](https://webscan.
 
 
 Build & Deploys: [![Netlify Status](https://api.netlify.com/api/v1/badges/c43453c1-5333-4df7-889b-c1d2b52183c0/deploy-status)](https://app.netlify.com/sites/web-scan/deploys)
-[![Vercel Status](https://therealsujitk-vercel-badge.vercel.app/?app=web-scan-ten)](https://vercel.com/as93/web-scan/)
+[![Vercel Status](https://therealsujitk-vercel-badge.vercel.app/?app=web-scan-ten)](https://vercel.com/khulnasoft/web-scan/)
 [![🐳 Build + Publish Docker Image](https://github.com/KhulnaSoft/web-scan/actions/workflows/docker.yml/badge.svg)](https://github.com/KhulnaSoft/web-scan/actions/workflows/docker.yml)
 [![🚀 Deploy to AWS](https://github.com/KhulnaSoft/web-scan/actions/workflows/deploy-aws.yml/badge.svg)](https://github.com/KhulnaSoft/web-scan/actions/workflows/deploy-aws.yml)
 <br />
