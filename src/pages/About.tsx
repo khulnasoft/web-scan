@@ -154,7 +154,7 @@ const About = (): JSX.Element => {
         </SponsorshipContainer>
         <hr />
         <p>
-          Web-Scan is developed and maintained by <a target="_blank" rel="noreferrer" href="https://aliciasykes.com">KhulnaSoft DevOps</a>.
+          Web-Scan is developed and maintained by <a target="_blank" rel="noreferrer" href="https://khulnasoft.com">KhulnaSoft DevOps</a>.
           It's licensed under the <a target="_blank" rel="noreferrer" href="https://github.com/KhulnaSoft/web-scan/blob/master/LICENSE">MIT license</a>,
           and is completely free to use, modify and distribute in both personal and commercial settings.<br />
           Source code and self-hosting docs are available on <a target="_blank" rel="noreferrer" href="https://github.com/khulnasoft/web-scan">GitHub</a>.
@@ -303,7 +303,7 @@ const About = (): JSX.Element => {
       <Heading as="h3" size="small" color={colors.primary}>License</Heading>
         <b>
           <a target="_blank" rel="noreferrer" href="https://github.com/khulnasoft/web-scan">Web-Scan</a> is distributed under the MIT license,
-          © <a target="_blank" rel="noreferrer" href="https://aliciasykes.com">KhulnaSoft DevOps</a> { new Date().getFullYear()}
+          © <a target="_blank" rel="noreferrer" href="https://khulnasoft.com">KhulnaSoft DevOps</a> { new Date().getFullYear()}
         </b>
         <br />
         <small>For more info, see <a target="_blank" rel="noreferrer" href="https://tldrlegal.com/license/mit-license">TLDR Legal → MIT</a></small>

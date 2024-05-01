@@ -38,7 +38,7 @@ jobs:
       uses: chrnorm/deployment-action@releases/v1
       id: deployment_api
       with:
-        token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ORG_REPO_TOKEN || secrets.GITHUB_TOKEN }}
         environment: AWS (Backend API)
         ref: ${{ github.ref }}
       
@@ -58,7 +58,7 @@ jobs:
       if: always()
       uses: chrnorm/deployment-status@releases/v1
       with:
-        token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ORG_REPO_TOKEN || secrets.GITHUB_TOKEN }}
         state: "${{ job.status }}"
         deployment_id: ${{ steps.deployment_api.outputs.deployment_id }}
         ref: ${{ github.ref }}
@@ -87,7 +87,7 @@ jobs:
       uses: chrnorm/deployment-action@releases/v1
       id: deployment_frontend
       with:
-        token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ORG_REPO_TOKEN || secrets.GITHUB_TOKEN }}
         environment: AWS (Frontend Web UI)
         ref: ${{ github.ref }}
         
@@ -121,7 +121,7 @@ jobs:
       if: always()
       uses: chrnorm/deployment-status@releases/v1
       with:
-        token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ORG_REPO_TOKEN || secrets.GITHUB_TOKEN }}
         state: "${{ job.status }}"
         deployment_id: ${{ steps.deployment_frontend.outputs.deployment_id }}
         ref: ${{ github.ref }}

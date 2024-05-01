@@ -42,7 +42,7 @@ const Link = styled.a`
 
 const Footer = (props: { isFixed?: boolean }): JSX.Element => {
   const licenseUrl = 'https://github.com/khulnasoft/web-scan/blob/master/LICENSE';
-  const authorUrl = 'https://aliciasykes.com';
+  const authorUrl = 'https://khulnasoft.com';
   const githubUrl = 'https://github.com/khulnasoft/web-scan';
   return (
   <StyledFooter style={props.isFixed ? {position: 'fixed'} : {}}>
