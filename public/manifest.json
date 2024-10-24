@@ -1,6 +1,6 @@
 {
-  "short_name": "Web Scan",
-  "name": "KhulnaSoft/Web-Scan",
+  "short_name": "Web Check",
+  "name": "khulnasoft/Web-Scan",
   "icons": [
     {
       "src": "favicon.ico",
