@@ -5,7 +5,7 @@
 <img src="https://i.ibb.co/q1gZN2p/web-scan-logo.png" width="96" /><br />
 <b><i>Comprehensive, on-demand open source intelligence for any website</i></b>
 <br />
-<b>🌐 <a href="https://webscan.khulnasoft.com/">webscan.khulnasoft.com</a></b><br />
+<b>🌐 <a href="https://web-scan.netlify.app/">web-scan.netlify.app</a></b><br />
 
 </p>
 
@@ -62,25 +62,28 @@ The aim is to help you easily understand, optimize and secure your website.
 <details>
       <summary>Expand Screenshot</summary>
 
-[![Screenshot](https://raw.githubusercontent.com/KhulnaSoft/web-scan/master/.github/screenshots/web-scan-screenshot1.png)](https://webscan.khulnasoft.com/)
+[![Screenshot](https://raw.githubusercontent.com/khulnasoft/web-scan/master/.github/screenshots/web-scan-screenshot1.png)](https://web-scan.khulnasoft.com/)
       
 </details>
 
-[![Screenshot](https://i.ibb.co/r0jXN6s/web-scan.png)](https://github.com/KhulnaSoft/web-scan/tree/master/.github/screenshots)
+[![Screenshot](https://i.ibb.co/r0jXN6s/web-scan.png)](https://github.com/khulnasoft/web-scan/tree/master/.github/screenshots)
 
 ### Live Demo
-A hosted version can be accessed at: **[webscan.khulnasoft.com](https://webscan.khulnasoft.com)**
+A hosted version can be accessed at: **[web-scan.khulnasoft.com](https://web-scan.khulnasoft.com)**
+
+### Mirror
+The source for this repo is mirrored to CodeBerg, available at: **[codeberg.org/khulnasoft-dev/web-scan](https://codeberg.org/khulnasoft-dev/web-scan)**
 
 ### Status
 
 
 Build & Deploys: [![Netlify Status](https://api.netlify.com/api/v1/badges/c43453c1-5333-4df7-889b-c1d2b52183c0/deploy-status)](https://app.netlify.com/sites/web-scan/deploys)
-[![Vercel Status](https://therealsujitk-vercel-badge.vercel.app/?app=web-scan-ten)](https://vercel.com/khulnasoft/web-scan/)
-[![🐳 Build + Publish Docker Image](https://github.com/KhulnaSoft/web-scan/actions/workflows/docker.yml/badge.svg)](https://github.com/KhulnaSoft/web-scan/actions/workflows/docker.yml)
-[![🚀 Deploy to AWS](https://github.com/KhulnaSoft/web-scan/actions/workflows/deploy-aws.yml/badge.svg)](https://github.com/KhulnaSoft/web-scan/actions/workflows/deploy-aws.yml)
+[![Vercel Status](https://therealsujitk-vercel-badge.vercel.app/?app=web-scan-ten)](https://vercel.com/as93/web-scan/)
+[![🐳 Build + Publish Docker Image](https://github.com/khulnasoft/web-scan/actions/workflows/docker.yml/badge.svg)](https://github.com/khulnasoft/web-scan/actions/workflows/docker.yml)
+[![🚀 Deploy to AWS](https://github.com/khulnasoft/web-scan/actions/workflows/deploy-aws.yml/badge.svg)](https://github.com/khulnasoft/web-scan/actions/workflows/deploy-aws.yml)
 <br />
-Repo Management & Miscellaneous: [![🪞 Mirror to Codeberg](https://github.com/KhulnaSoft/web-scan/actions/workflows/mirror.yml/badge.svg)](https://github.com/KhulnaSoft/web-scan/actions/workflows/mirror.yml)
-[![💓 Inserts Contributors & Sponsors](https://github.com/KhulnaSoft/web-scan/actions/workflows/credits.yml/badge.svg)](https://github.com/KhulnaSoft/web-scan/actions/workflows/credits.yml)
+Repo Management & Miscellaneous: [![🪞 Mirror to Codeberg](https://github.com/khulnasoft/web-scan/actions/workflows/mirror.yml/badge.svg)](https://github.com/khulnasoft/web-scan/actions/workflows/mirror.yml)
+[![💓 Inserts Contributors & Sponsors](https://github.com/khulnasoft/web-scan/actions/workflows/credits.yml/badge.svg)](https://github.com/khulnasoft/web-scan/actions/workflows/credits.yml)
 
 
 ### Features
@@ -754,7 +757,7 @@ This may be useful to see what a given website looks like, free of the constrain
 
 </details>
 
-Read more here: **[webscan.khulnasoft.com/about](https://webscan.khulnasoft.com/about)**
+Read more here: **[web-scan.netlify.app/about](https://web-scan.netlify.app/about)**
 
 ---
 
@@ -772,7 +775,7 @@ Click the button below, to deploy to Netlify 👇
 
 Click the button below, to deploy to Vercel 👇
 
-[![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-%23ffffff?style=for-the-badge&logo=vercel&labelColor=1e0e41)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkhulnasoft%2Fweb-scan&project-name=web-scan&repository-name=web-scan-fork&demo-title=Web-Scan%20Demo&demo-description=Check%20out%20webscan.khulnasoft.com%20to%20see%20a%20live%20demo%20of%20this%20application%20running.&demo-url=https%3A%2F%2Fwebscan.khulnasoft.com&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2FKhulnaSoft%2Fweb-scan%2Fmaster%2F.github%2Fscreenshots%2Fweb-scan-screenshot10.png)
+[![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-%23ffffff?style=for-the-badge&logo=vercel&labelColor=1e0e41)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkhulnasoft%2Fweb-scan&project-name=web-scan&repository-name=web-scan-fork&demo-title=Web-Scan%20Demo&demo-description=Check%20out%20web-scan.netlify.app%20to%20see%20a%20live%20demo%20of%20this%20application%20running.&demo-url=https%3A%2F%2Fweb-scan.netlify.app&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fkhulnasoft%2Fweb-scan%2Fmaster%2F.github%2Fscreenshots%2Fweb-scan-screenshot10.png)
 
 ### Deploying - Option #3: Docker
 
@@ -783,7 +786,7 @@ Run `docker run -p 3000:3000 khulnasoft/web-scan`, then open [`localhost:3000`](
 
 You can get the Docker image from:
 - DockerHub: [`khulnasoft/web-scan`](https://hub.docker.com/r/khulnasoft/web-scan)
-- GHCR: [`ghcr.io/khulnasoft/web-scan`](https://github.com/KhulnaSoft/web-scan/pkgs/container/web-scan)
+- GHCR: [`ghcr.io/khulnasoft/web-scan`](https://github.com/khulnasoft/web-scan/pkgs/container/web-scan)
 - Or build the image yourself by cloning the repo and running `docker build -t web-scan .`
 
 </details>
@@ -793,7 +796,7 @@ You can get the Docker image from:
 Install the prerequisites listed in the [Developing](#developing) section, then run: 
 
 ```bash
-git clone https://github.com/KhulnaSoft/web-scan.git  # Download the code from GitHub
+git clone https://github.com/khulnasoft/web-scan.git  # Download the code from GitHub
 cd web-scan                                        # Navigate into the project dir
 yarn install                                        # Install the NPM dependencies
 yarn build                                          # Build the app for production
@@ -854,7 +857,7 @@ Note that keys that are prefixed with `REACT_APP_` are used client-side, and as 
 
 ### Developing
 
-1. Clone the repo, `git clone git@github.com:KhulnaSoft/web-scan.git`
+1. Clone the repo, `git clone git@github.com:khulnasoft/web-scan.git`
 2. Cd into it, `cd web-scan`
 3. Install dependencies: `yarn`
 4. Start the dev server, with `yarn dev`
@@ -865,9 +868,393 @@ Some checks also require `chromium`, `traceroute` and `dns` to be installed with
 
 ---
 
+## Community
+
+### Contributing
+
+Contributions of any kind are very welcome, and would be much appreciated.
+For Code of Conduct, see [Contributor Convent](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
+
+To get started, fork the repo, make your changes, add, commit and push the code, then come back here to open a pull request. If you're new to GitHub or open source, [this guide](https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3#let-s-make-our-first-pull-request-) or the [git docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) may help you get started, but feel free to reach out if you need any support.
+
+[![Submit a PR](https://img.shields.io/badge/Submit_a_PR-GitHub-%23060606?style=for-the-badge&logo=github&logoColor=fff)](https://github.com/khulnasoft/web-scan/compare)
+
+
+### Reporting Bugs
+
+If you've found something that doesn't work as it should, or would like to suggest a new feature, then go ahead and raise a ticket on GitHub.
+For bugs, please outline the steps needed to reproduce, and include relevant info like system info and resulting logs.
+
+[![Raise an Issue](https://img.shields.io/badge/Raise_an_Issue-GitHub-%23060606?style=for-the-badge&logo=github&logoColor=fff)](https://github.com/khulnasoft/web-scan/issues/new/choose)
+
+### Supporting
+
+The app will remain 100% free and open source.
+But due to the amount of traffic that the hosted instance gets, the lambda function usage is costing about $25/month.
+Any help with covering the costs via GitHub Sponsorship would be much appreciated.
+It's thanks to the support of the community that this project is able to be freely available for everyone :)
+
+[![Sponsor khulnasoft on GitHub](https://img.shields.io/badge/Sponsor_on_GitHub-khulnasoft-%23ff4dda?style=for-the-badge&logo=githubsponsors&logoColor=ff4dda)](https://github.com/sponsors/khulnasoft)
+
+
+### Contributors
+
+Credit to the following users for contributing to Web-Scan
+
+<!-- readme: contributors -start -->
+<table>
+	<tbody>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/khulnasoft">
+                    <img src="https://avatars.githubusercontent.com/u/1862727?v=4" width="80;" alt="khulnasoft"/>
+                    <br />
+                    <sub><b>KhulnaSoft Ltd</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/liss-bot">
+                    <img src="https://avatars.githubusercontent.com/u/87835202?v=4" width="80;" alt="liss-bot"/>
+                    <br />
+                    <sub><b>KhulnaSoft Bot</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/n0a">
+                    <img src="https://avatars.githubusercontent.com/u/14150948?v=4" width="80;" alt="n0a"/>
+                    <br />
+                    <sub><b>Denis Simonov</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/muni106">
+                    <img src="https://avatars.githubusercontent.com/u/65845442?v=4" width="80;" alt="muni106"/>
+                    <br />
+                    <sub><b>Mounir Samite</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/ChrisCarini">
+                    <img src="https://avatars.githubusercontent.com/u/6374067?v=4" width="80;" alt="ChrisCarini"/>
+                    <br />
+                    <sub><b>Chris Carini</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/brianteeman">
+                    <img src="https://avatars.githubusercontent.com/u/1296369?v=4" width="80;" alt="brianteeman"/>
+                    <br />
+                    <sub><b>Brian Teeman</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/GreyXor">
+                    <img src="https://avatars.githubusercontent.com/u/79602273?v=4" width="80;" alt="GreyXor"/>
+                    <br />
+                    <sub><b>GreyXor</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/bolens">
+                    <img src="https://avatars.githubusercontent.com/u/1218380?v=4" width="80;" alt="bolens"/>
+                    <br />
+                    <sub><b>Michael Bolens</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/vitalykarasik">
+                    <img src="https://avatars.githubusercontent.com/u/7628795?v=4" width="80;" alt="vitalykarasik"/>
+                    <br />
+                    <sub><b>Vitaly Karasik</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/robinson">
+                    <img src="https://avatars.githubusercontent.com/u/237874?v=4" width="80;" alt="robinson"/>
+                    <br />
+                    <sub><b>Lth</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/abhishekMuge">
+                    <img src="https://avatars.githubusercontent.com/u/49590582?v=4" width="80;" alt="abhishekMuge"/>
+                    <br />
+                    <sub><b>Abhishek Muge</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/UlisesGascon">
+                    <img src="https://avatars.githubusercontent.com/u/5110813?v=4" width="80;" alt="UlisesGascon"/>
+                    <br />
+                    <sub><b>Ulises Gascón</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/PhiRequiem">
+                    <img src="https://avatars.githubusercontent.com/u/1323576?v=4" width="80;" alt="PhiRequiem"/>
+                    <br />
+                    <sub><b>PhiRequiem</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Myzel394">
+                    <img src="https://avatars.githubusercontent.com/u/50424412?v=4" width="80;" alt="Myzel394"/>
+                    <br />
+                    <sub><b>Myzel394</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/murrple-1">
+                    <img src="https://avatars.githubusercontent.com/u/5559656?v=4" width="80;" alt="murrple-1"/>
+                    <br />
+                    <sub><b>Murray Christopherson</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/t3chn0m4g3">
+                    <img src="https://avatars.githubusercontent.com/u/4318452?v=4" width="80;" alt="t3chn0m4g3"/>
+                    <br />
+                    <sub><b>Marco Ochse</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/treatmesubj">
+                    <img src="https://avatars.githubusercontent.com/u/39680353?v=4" width="80;" alt="treatmesubj"/>
+                    <br />
+                    <sub><b>John Hupperts</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/eltociear">
+                    <img src="https://avatars.githubusercontent.com/u/22633385?v=4" width="80;" alt="eltociear"/>
+                    <br />
+                    <sub><b>Ikko Eltociear Ashimine</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/Gertje823">
+                    <img src="https://avatars.githubusercontent.com/u/36937387?v=4" width="80;" alt="Gertje823"/>
+                    <br />
+                    <sub><b>Gertje823</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/epreston">
+                    <img src="https://avatars.githubusercontent.com/u/347224?v=4" width="80;" alt="epreston"/>
+                    <br />
+                    <sub><b>Ed Preston</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/0xflotus">
+                    <img src="https://avatars.githubusercontent.com/u/26602940?v=4" width="80;" alt="0xflotus"/>
+                    <br />
+                    <sub><b>0xflotus</b></sub>
+                </a>
+            </td>
+		</tr>
+	<tbody>
+</table>
+<!-- readme: contributors -end -->
+
+### Sponsors
+
+Huge thanks to these wonderful people, who sponsor me on GitHub, their support helps cover the costs required to keep Web-Scan and my other projects free for everyone. Consider joining them, by [sponsoring me on GitHub](https://github.com/sponsors/khulnasoft) if you're able.
+
+<!-- readme: sponsors -start -->
+<table>
+	<tbody>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/github">
+                    <img src="https://avatars.githubusercontent.com/u/9919?v=4" width="80;" alt="github"/>
+                    <br />
+                    <sub><b>GitHub</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/koconder">
+                    <img src="https://avatars.githubusercontent.com/u/25068?u=582657b23622aaa3dfe68bd028a780f272f456fa&v=4" width="80;" alt="koconder"/>
+                    <br />
+                    <sub><b>Vincent Koc</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Admonstrator">
+                    <img src="https://avatars.githubusercontent.com/u/69824?u=1e226d7a36cdd661c3e4cd486fea140d045b7d57&v=4" width="80;" alt="Admonstrator"/>
+                    <br />
+                    <sub><b>Aaron Viehl</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/tbjers">
+                    <img src="https://avatars.githubusercontent.com/u/1117052?v=4" width="80;" alt="tbjers"/>
+                    <br />
+                    <sub><b>Torgny Bjers</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/AnandChowdhary">
+                    <img src="https://avatars.githubusercontent.com/u/2841780?u=747e554b3a7f12eb20b7910e1c87d817844f714f&v=4" width="80;" alt="AnandChowdhary"/>
+                    <br />
+                    <sub><b>Anand Chowdhary</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/shrippen">
+                    <img src="https://avatars.githubusercontent.com/u/2873570?v=4" width="80;" alt="shrippen"/>
+                    <br />
+                    <sub><b>Shrippen</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/bile0026">
+                    <img src="https://avatars.githubusercontent.com/u/5022496?u=aec96ad173c0ea9baaba93807efa8a848af6595c&v=4" width="80;" alt="bile0026"/>
+                    <br />
+                    <sub><b>Zach Biles</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/UlisesGascon">
+                    <img src="https://avatars.githubusercontent.com/u/5110813?u=3c41facd8aa26154b9451de237c34b0f78d672a5&v=4" width="80;" alt="UlisesGascon"/>
+                    <br />
+                    <sub><b>Ulises Gascón</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/digitalarche">
+                    <img src="https://avatars.githubusercontent.com/u/6546135?u=564756d7f44ab2206819eb3148f6d822673f5066&v=4" width="80;" alt="digitalarche"/>
+                    <br />
+                    <sub><b>Digital Archeology</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/InDieTasten">
+                    <img src="https://avatars.githubusercontent.com/u/7047377?u=8d8f8017628b38bc46dcbf3620e194b01d3fb2d1&v=4" width="80;" alt="InDieTasten"/>
+                    <br />
+                    <sub><b>InDieTasten</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/araguaci">
+                    <img src="https://avatars.githubusercontent.com/u/7318668?v=4" width="80;" alt="araguaci"/>
+                    <br />
+                    <sub><b>Araguaci</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/bmcgonag">
+                    <img src="https://avatars.githubusercontent.com/u/7346620?u=2a0f9284f3e12ac1cc15288c254d1ec68a5081e8&v=4" width="80;" alt="bmcgonag"/>
+                    <br />
+                    <sub><b>Brian McGonagill</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/vlad-tim">
+                    <img src="https://avatars.githubusercontent.com/u/11474041?u=eee43705b54d2ec9f51fc4fcce5ad18dd17c87e4&v=4" width="80;" alt="vlad-tim"/>
+                    <br />
+                    <sub><b>Vlad</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/helixzz">
+                    <img src="https://avatars.githubusercontent.com/u/12218889?u=d06d0c103dfbdb99450623064f7da3c5a3675fb6&v=4" width="80;" alt="helixzz"/>
+                    <br />
+                    <sub><b>HeliXZz</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/patvdv">
+                    <img src="https://avatars.githubusercontent.com/u/12430107?u=e8911c2fb91af4d30432f76da8c40927b2830bd7&v=4" width="80;" alt="patvdv"/>
+                    <br />
+                    <sub><b>Patrick Van Der Veken</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/plgonzalezrx8">
+                    <img src="https://avatars.githubusercontent.com/u/19900049?u=48a58d2da520a9d712184c6e6e99927ff3cbf179&v=4" width="80;" alt="plgonzalezrx8"/>
+                    <br />
+                    <sub><b>Pedro Gonzalez</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/mryesiller">
+                    <img src="https://avatars.githubusercontent.com/u/24632172?u=0d20f2d615158f87cd60a3398d3efb026c32f291&v=4" width="80;" alt="mryesiller"/>
+                    <br />
+                    <sub><b>Göksel Yeşiller</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/forwardemail">
+                    <img src="https://avatars.githubusercontent.com/u/32481436?v=4" width="80;" alt="forwardemail"/>
+                    <br />
+                    <sub><b>Forward Email - Open-source & Privacy-focused Email Service (2023)</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/Bastii717">
+                    <img src="https://avatars.githubusercontent.com/u/53431819?u=604977bed6ad6875ada890d0d3765a4cacc2fa14&v=4" width="80;" alt="Bastii717"/>
+                    <br />
+                    <sub><b>Bastii717</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/getumbrel">
+                    <img src="https://avatars.githubusercontent.com/u/59408891?v=4" width="80;" alt="getumbrel"/>
+                    <br />
+                    <sub><b>Umbrel</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/M2TD">
+                    <img src="https://avatars.githubusercontent.com/u/85460457?v=4" width="80;" alt="M2TD"/>
+                    <br />
+                    <sub><b>M2TD</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/frankdez93">
+                    <img src="https://avatars.githubusercontent.com/u/87549420?v=4" width="80;" alt="frankdez93"/>
+                    <br />
+                    <sub><b>Frankdez93</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/terminaltrove">
+                    <img src="https://avatars.githubusercontent.com/u/121595180?v=4" width="80;" alt="terminaltrove"/>
+                    <br />
+                    <sub><b>Terminal Trove</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/nrvo">
+                    <img src="https://avatars.githubusercontent.com/u/151435968?u=e1dcb307fd0efdc45cddbe9490a7b956e4da6835&v=4" width="80;" alt="nrvo"/>
+                    <br />
+                    <sub><b>Nrvo</b></sub>
+                </a>
+            </td>
+		</tr>
+	<tbody>
+</table>
+<!-- readme: sponsors -end -->
+
+---
+
 ## License
 
-> _**[KhulnaSoft/Web-Scan](https://github.com/KhulnaSoft/web-scan)** is licensed under [MIT](https://github.com/KhulnaSoft/web-scan/blob/HEAD/LICENSE) © [KhulnaSoft DevOps](https://khulnasoft.com) 2023._<br>
+> _**[khulnasoft/Web-Scan](https://github.com/khulnasoft/web-scan)** is licensed under [MIT](https://github.com/khulnasoft/web-scan/blob/HEAD/LICENSE) © [KhulnaSoft Ltd](https://khulnasoft.com) 2023._<br>
 > <sup align="right">For information, see <a href="https://tldrlegal.com/license/mit-license">TLDR Legal > MIT</a></sup>
 
 <details>
@@ -875,7 +1262,7 @@ Some checks also require `chromium`, `traceroute` and `dns` to be installed with
 
 ```
 The MIT License (MIT)
-Copyright (c) KhulnaSoft DevOps <security@khulnasoft.com> 
+Copyright (c) KhulnaSoft Ltd <khulnasoft.com> 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal 
@@ -895,30 +1282,16 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-[![View Dependency Licenses & SBOM on FOSSA](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKhulnaSoft%2Fweb-scan.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FKhulnaSoft%2Fweb-scan?ref=badge_large&issueType=license)
+[![View Dependency Licenses & SBOM on FOSSA](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkhulnasoft%2Fweb-scan.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkhulnasoft%2Fweb-scan?ref=badge_large&issueType=license)
 
 </details>
 
 
 <!-- License + Copyright -->
 <p  align="center">
-  <i>© <a href="https://khulnasoft.com">KhulnaSoft DevOps</a> 2023</i><br>
-  <i>Licensed under <a href="https://gist.github.com/KhulnaSoft/143d2ee01ccc5c052a17">MIT</a></i><br>
+  <i>© <a href="https://khulnasoft.com">KhulnaSoft Ltd</a> 2023</i><br>
+  <i>Licensed under <a href="https://gist.github.com/khulnasoft-bot/d671dc6861280441587fb400c3d96e3d">MIT</a></i><br>
   <a href="https://github.com/khulnasoft"><img src="https://i.ibb.co/4KtpYxb/octocat-clean-mini.png" /></a><br>
   <sup>Thanks for visiting :)</sup>
 </p>
-
-<!-- Dinosaurs are Awesome -->
-<!-- 
-                        . - ~ ~ ~ - .
-      ..     _      .-~               ~-.
-     //|     \ `..~                      `.
-    || |      }  }              /       \  \
-(\   \\ \~^..'                 |         }  \
- \`.-~  o      /       }       |        /    \
- (__          |       /        |       /      `.
-  `- - ~ ~ -._|      /_ - ~ ~ ^|      /- _      `.
-              |     /          |     /     ~-.     ~- _
-              |_____|          |_____|         ~ - . _ _~_-_
--->
 
