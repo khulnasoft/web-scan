@@ -1,9 +1,9 @@
 openapi: 3.0.0
 info:
-  title: Web Check 🕵
+  title: Web Scan 🕵
   description: >
-    **API documentation for the [Web Check](https://github.com/khulnasoft/web-scan) backend endpoints.**<br>
-    _Web Check gives you x-ray vision, revealing the configration and inner workings of any website._
+    **API documentation for the [Web Scan](https://github.com/khulnasoft/web-scan) backend endpoints.**<br>
+    _Web Scan gives you x-ray vision, revealing the configration and inner workings of any website._
     <br><br>
     [![Website - Web-Scan.xyz](https://img.shields.io/badge/Website-webcheck.zyz-9fef00?style=flat&logo=googlecloudstorage&logoColor=white&labelColor=1c1d28)](https://web-scan.netlify.app/)
     [![DockerHub - khulnasoft/Web-Scan](https://img.shields.io/badge/DockerHub-khulnasoft/Web_Check-1fb1f4?style=flat&logo=docker&logoColor=white&labelColor=1c1d28)](https://hub.docker.com/r/khulnasoft/web-scan)

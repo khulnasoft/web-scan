@@ -240,7 +240,7 @@ const Results = (props: { address?: string } ): JSX.Element => {
             { error: `Failed to get a valid response 😢\n`
             + 'This is likely due the target not exposing the required data, '
             + 'or limitations in imposed by the infrastructure this instance '
-            + 'of Web Check is running on.\n\n'
+            + 'of Web Scan is running on.\n\n'
             + `Error info:\n${error}`}
           ));
     });

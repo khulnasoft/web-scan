@@ -219,8 +219,8 @@ const Home = (): JSX.Element => {
       <UserInputMain onSubmit={formSubmitEvent}>
         <a href="/">
           <Heading as="h1" size="xLarge" align="center" color={colors.primary}>
-            <img width="64" src="/web-scan.png" alt="Web Check Icon" />
-            Web Check
+            <img width="64" src="/web-scan.png" alt="Web Scan Icon" />
+            Web Scan
           </Heading>
         </a>
         <Input

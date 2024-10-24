@@ -23,12 +23,12 @@ const headers = {
 
 
 const timeoutErrorMsg = 'You can re-trigger this request, by clicking "Retry"\n'
-+ 'If you\'re running your own instance of Web Check, then you can '
++ 'If you\'re running your own instance of Web Scan, then you can '
 + 'resolve this issue, by increasing the timeout limit in the '
 + '`API_TIMEOUT_LIMIT` environmental variable to a higher value (in milliseconds), '
 + 'or if you\'re hosting on Vercel increase the maxDuration in vercel.json.\n\n'
 + `The public instance currently has a lower timeout of ${TIMEOUT}ms `
-+ 'in order to keep running costs affordable, so that Web Check can '
++ 'in order to keep running costs affordable, so that Web Scan can '
 + 'remain freely available for everyone.';
 
 // A middleware function used by all API routes on all platforms

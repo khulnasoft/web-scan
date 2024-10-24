@@ -1,4 +1,3 @@
-version: '3.9'
 services:
   web-scan:
     container_name: Web-Scan
