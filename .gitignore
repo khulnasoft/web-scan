@@ -9,12 +9,14 @@
 /build/
 
 # ------------------------
-#         DEPLOYMENT
+#         BUILT FILES
 # ------------------------
+dist/
 .vercel/
 .netlify/
 .webpack/
 .serverless/
+.astro/
 
 # ------------------------
 #         DEPENDENCIES
@@ -58,3 +60,4 @@ Thumbs.db
 *.swp
 *.swo
 
+.vercel
