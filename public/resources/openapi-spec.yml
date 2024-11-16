@@ -8,15 +8,15 @@ info:
     [![Website - Web-Scan.xyz](https://img.shields.io/badge/Website-webcheck.zyz-9fef00?style=flat&logo=googlecloudstorage&logoColor=white&labelColor=1c1d28)](https://web-scan.netlify.app/)
     [![DockerHub - khulnasoft/Web-Scan](https://img.shields.io/badge/DockerHub-khulnasoft/Web_Check-1fb1f4?style=flat&logo=docker&logoColor=white&labelColor=1c1d28)](https://hub.docker.com/r/khulnasoft/web-scan)
     [![GitHub - khulnasoft/Web-Scan](https://img.shields.io/badge/GitHub-khulnasoft/Web_Check-a832fc?style=flat&logo=github&logoColor=white&labelColor=1c1d28)](https://github.com/khulnasoft/web-scan)
-    [![Sponsor - KhulnaSoft Ltd](https://img.shields.io/badge/Sponsor-KhulnaSoft_Bot-f2159a?style=flat&logo=githubsponsors&logoColor=white&labelColor=1c1d28)](https://github.com/sponsors/khulnasoft)
-  
+    [![Sponsor - KhulnaSoft Ltd](https://img.shields.io/badge/Sponsor-KhulnaSoft_Ltd-f2159a?style=flat&logo=githubsponsors&logoColor=white&labelColor=1c1d28)](https://github.com/sponsors/khulnasoft)
+
   version: 1.0.0
   license:
-    name: 'License: MIT'
+    name: "License: MIT"
     url: https://github.com/khulnasoft/web-scan/blob/master/LICENSE
   termsOfService: https://web-scan.netlify.app/about#terms-info
 externalDocs:
-  description: 'Source: GitHub'
+  description: "Source: GitHub"
   url: https://github.com/khulnasoft/web-scan
 servers:
   - url: http://localhost:3001/api
@@ -25,7 +25,7 @@ servers:
     description: Local (Production)
   - url: https://web-scan.netlify.app/api
     description: Public Demo (Vercel)
-  - url: https://web-scan.khulnasoft.com/api
+  - url: https://web-scan.as93.net/api
     description: Public Demo (Netlify)
 tags:
   - name: Quality & Info
@@ -43,37 +43,37 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     Skipped:
       description: No Content - The request was successful, but no content is returned.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/SkippedResponse'
+            $ref: "#/components/schemas/SkippedResponse"
     MissingParam:
       description: Bad Request - Missing or incorrect input parameters.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     Unauthorized:
       description: Unauthorized - Authentication credentials were missing or incorrect.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     Forbidden:
       description: Forbidden - The credentials provided do not grant the necessary permissions.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     TooManyRequests:
       description: Too Many Requests - Rate limit exceeded.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
   schemas:
     ErrorResponse:
       type: object
@@ -101,7 +101,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -160,27 +160,57 @@ paths:
                       items:
                         type: string
                       description: List of scan details
-                    example: 
-                      - ["19961221171114", "200", "RX44GNWXPO4HX6ERA2LHBORWD4BJ2HUJ", "971", null]
-                      - ["19970209085620", "200", "6PUZMQAGXXV3RCEQ65WWUCMIJVSG4OQI", "1025", null]
-                      - ["19970209085620", "200", "RX44GNWXPO4HX6ERA2LHBORWD4BJ2HUJ", "975", null]
-                      - ["19970412142046", "200", "RX44GNWXPO4HX6ERA2LHBORWD4BJ2HUJ", "1022", null]
-                      - ["19980206180754", "200", "B6ACYSFKSPWKXRPASZYOK3IBIBY7HB3I", "1102", null]
+                    example:
+                      - [
+                          "19961221171114",
+                          "200",
+                          "RX44GNWXPO4HX6ERA2LHBORWD4BJ2HUJ",
+                          "971",
+                          null,
+                        ]
+                      - [
+                          "19970209085620",
+                          "200",
+                          "6PUZMQAGXXV3RCEQ65WWUCMIJVSG4OQI",
+                          "1025",
+                          null,
+                        ]
+                      - [
+                          "19970209085620",
+                          "200",
+                          "RX44GNWXPO4HX6ERA2LHBORWD4BJ2HUJ",
+                          "975",
+                          null,
+                        ]
+                      - [
+                          "19970412142046",
+                          "200",
+                          "RX44GNWXPO4HX6ERA2LHBORWD4BJ2HUJ",
+                          "1022",
+                          null,
+                        ]
+                      - [
+                          "19980206180754",
+                          "200",
+                          "B6ACYSFKSPWKXRPASZYOK3IBIBY7HB3I",
+                          "1102",
+                          null,
+                        ]
                   scanUrl:
                     type: string
                     format: uri
                     description: The URL to the scan
                     example: "https://duck.com"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /block-lists:
     get:
       summary: Retrieve block lists data
@@ -194,7 +224,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -218,16 +248,16 @@ paths:
                           type: boolean
                           description: Whether the URL is blocked by the server
                           example: false
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /carbon:
     get:
       summary: Retrieve carbon data
@@ -241,7 +271,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -307,16 +337,16 @@ paths:
                     format: uri
                     description: The URL to the scan
                     example: "https://duck.com"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /cookies:
     get:
       summary: Retrieve cookies data
@@ -330,7 +360,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -404,16 +434,16 @@ paths:
                           type: string
                           description: The source scheme of the cookie
                           example: "Secure"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /dns-server:
     get:
       summary: Retrieve DNS server data
@@ -427,7 +457,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -453,22 +483,22 @@ paths:
                             type: string
                             description: Hostnames associated with the DNS server
                           nullable: true
-                          example: 
+                          example:
                             - "lhr48s30-in-f14.1e100.net"
                         dohDirectSupports:
                           type: boolean
                           description: Whether the server supports DoH (DNS over HTTPS) directly
                           example: false
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /dns:
     get:
       summary: Retrieve DNS data
@@ -482,7 +512,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -534,8 +564,12 @@ paths:
                         type: string
                     description: List of name servers
                     example:
-                      - ["v=spf1 ip4:20.13.235.192/26 ip4:20.67.221.0/24 ip4:20.67.222.0/24 ip4:20.67.223.0/24 -all"]
-                      - ["google-site-verification=xWLxaaNt2iGObwJ_jeX1E3Wn-xro--W75DBKWs5uufc"]
+                      - [
+                          "v=spf1 ip4:20.13.235.192/26 ip4:20.67.221.0/24 ip4:20.67.222.0/24 ip4:20.67.223.0/24 -all",
+                        ]
+                      - [
+                          "google-site-verification=xWLxaaNt2iGObwJ_jeX1E3Wn-xro--W75DBKWs5uufc",
+                        ]
                   CNAME:
                     type: array
                     items:
@@ -594,16 +628,16 @@ paths:
                       type: string
                     description: Pointer records
                     example: []
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /dnssec:
     get:
       summary: Retrieve DNSSEC data
@@ -617,7 +651,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -855,16 +889,16 @@ paths:
                             type: string
                             description: Additional comments
                             example: "Response from 2001:502:7094::30."
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /firewall:
     get:
       summary: Retrieve firewall data
@@ -878,7 +912,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -894,16 +928,16 @@ paths:
                     nullable: true
                     description: The name of the WAF, if present
                     example: "Cloudflare"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /get-ip:
     get:
       summary: Retrieve IP data
@@ -917,7 +951,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -932,16 +966,16 @@ paths:
                     type: integer
                     description: The IP family (4 for IPv4, 6 for IPv6)
                     example: 4
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /headers:
     get:
       summary: Retrieve headers data
@@ -955,7 +989,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -985,17 +1019,17 @@ paths:
                   vary: "Accept-Encoding"
                   server: "cloudflare"
                   cf-ray: "8853658f9da5940b-LHR"
-                  alt-svc: "h3=\":443\"; ma=86400"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+                  alt-svc: 'h3=":443"; ma=86400'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /hsts:
     get:
       summary: Retrieve HSTS data
@@ -1010,7 +1044,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1030,16 +1064,16 @@ paths:
                     nullable: true
                     description: The HSTS header if present
                     example: null
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /http-security:
     get:
       summary: Retrieve HTTP security data
@@ -1054,7 +1088,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1081,16 +1115,16 @@ paths:
                     type: boolean
                     description: Whether Content Security Policy is enabled
                     example: false
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /linked-pages:
     get:
       summary: Retrieve linked pages data
@@ -1104,7 +1138,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1137,16 +1171,16 @@ paths:
                       - "https://www.bbc.co.uk/iplayer"
                       - "https://www.bbc.co.uk/sounds"
                       - "https://www.bbc.co.uk/bitesize"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /mail-config:
     get:
       summary: Retrieve mail configuration data
@@ -1160,7 +1194,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1190,7 +1224,9 @@ paths:
                     description: List of TXT records
                     example:
                       - ["v=spf1 include:_spf.google.com ~all"]
-                      - ["google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o"]
+                      - [
+                          "google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o",
+                        ]
                   mailServices:
                     type: array
                     items:
@@ -1205,16 +1241,16 @@ paths:
                           description: The verification value for the mail service
                           example: "wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o"
                     description: List of mail services and their verification values
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /ports:
     get:
       summary: Retrieve open and failed ports data
@@ -1228,7 +1264,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1244,16 +1280,16 @@ paths:
                       - 80
                       - 443
                       - 8080
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /quality:
     get:
       summary: Retrieve website quality metrics
@@ -1273,7 +1309,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1325,16 +1361,16 @@ paths:
                         format: float
                         description: PWA score
                         example: 0.75
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /rank:
     get:
       summary: Retrieve rank data
@@ -1348,7 +1384,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1374,16 +1410,16 @@ paths:
                     type: string
                     description: The domain name for which rank data is provided
                     example: "duck.com"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /redirects:
     get:
       summary: Retrieve redirects data
@@ -1397,7 +1433,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1412,16 +1448,16 @@ paths:
                     example:
                       - "https://duck.com"
                       - "https://duckduckgo.com/"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /robots-txt:
     get:
       summary: Retrieve robots.txt data
@@ -1435,7 +1471,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1481,16 +1517,16 @@ paths:
                         val: "ia_archiver"
                       - lbl: "Disallow"
                         val: "/"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /screenshot:
     get:
       summary: Retrieve screenshot data
@@ -1504,23 +1540,23 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
               schema:
                 type: object
                 properties: {}
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /security-txt:
     get:
       summary: Retrieve security.txt data
@@ -1534,7 +1570,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1598,16 +1634,16 @@ paths:
                         nullable: true
                         description: Acknowledgments information
                         example: "https://hackerone.com/github/hacktivity"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /sitemap:
     get:
       summary: Retrieve sitemap data
@@ -1621,7 +1657,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1702,7 +1738,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1769,16 +1805,16 @@ paths:
                     type: string
                     description: The viewport settings of the page
                     example: "width=device-width, initial-scale=1, user-scalable=1 , viewport-fit=auto"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /ssl:
     get:
       summary: Retrieve SSL certificate data
@@ -1793,7 +1829,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1891,7 +1927,303 @@ paths:
                         items:
                           type: integer
                         description: The public key data
-                        example: [48, 130, 1, 34, 48, 13, 6, 9, 42, 134, 72, 134, 247, 13, 1, 1, 1, 5, 0, 3, 130, 1, 15, 0, 48, 130, 1, 10, 2, 130, 1, 1, 0, 164, 180, 245, 180, 24, 165, 56, 242, 87, 0, 16, 254, 218, 49, 156, 63, 115, 64, 14, 248, 194, 11, 179, 102, 104, 179, 74, 231, 118, 35, 60, 95, 6, 190, 5, 114, 227, 97, 128, 253, 128, 100, 216, 172, 65, 189, 84, 173, 44, 107, 170, 237, 235, 49, 48, 143, 55, 177, 30, 237, 28, 213, 210, 240, 70, 200, 182, 177, 99, 129, 196, 232, 14, 129, 115, 82, 193, 107, 111, 42, 134, 135, 88, 155, 181, 100, 191, 75, 60, 135, 164, 82, 132, 219, 154, 130, 64, 128, 80, 2, 132, 106, 6, 124, 140, 206, 181, 2, 144, 210, 167, 153, 144, 125, 251, 246, 235, 4, 50, 82, 143, 65, 60, 92, 201, 19, 240, 35, 3, 116, 37, 0, 98, 192, 39, 102, 66, 64, 229, 163, 168, 87, 75, 137, 20, 242, 98, 22, 206, 240, 118, 206, 206, 4, 66, 122, 72, 145, 55, 234, 90, 172, 252, 212, 70, 130, 116, 50, 193, 140, 255, 94, 49, 175, 15, 57, 153, 182, 10, 48, 57, 37, 8, 47, 221, 177, 83, 85, 19, 214, 177, 49, 73, 127, 0, 51, 151, 253, 30, 164, 213, 140, 36, 100, 2, 97, 225, 194, 5, 243, 58, 131, 253, 238, 157, 140, 72, 166, 56, 249, 137, 39, 206, 254, 66, 199, 221, 56, 82, 198, 42, 214, 46, 202, 116, 164, 23, 222, 121, 41, 7, 85, 104, 155, 58, 109, 25, 228, 65, 82, 105, 90, 88, 114, 73, 31, 2, 3, 1, 0, 1]
+                        example:
+                          [
+                            48,
+                            130,
+                            1,
+                            34,
+                            48,
+                            13,
+                            6,
+                            9,
+                            42,
+                            134,
+                            72,
+                            134,
+                            247,
+                            13,
+                            1,
+                            1,
+                            1,
+                            5,
+                            0,
+                            3,
+                            130,
+                            1,
+                            15,
+                            0,
+                            48,
+                            130,
+                            1,
+                            10,
+                            2,
+                            130,
+                            1,
+                            1,
+                            0,
+                            164,
+                            180,
+                            245,
+                            180,
+                            24,
+                            165,
+                            56,
+                            242,
+                            87,
+                            0,
+                            16,
+                            254,
+                            218,
+                            49,
+                            156,
+                            63,
+                            115,
+                            64,
+                            14,
+                            248,
+                            194,
+                            11,
+                            179,
+                            102,
+                            104,
+                            179,
+                            74,
+                            231,
+                            118,
+                            35,
+                            60,
+                            95,
+                            6,
+                            190,
+                            5,
+                            114,
+                            227,
+                            97,
+                            128,
+                            253,
+                            128,
+                            100,
+                            216,
+                            172,
+                            65,
+                            189,
+                            84,
+                            173,
+                            44,
+                            107,
+                            170,
+                            237,
+                            235,
+                            49,
+                            48,
+                            143,
+                            55,
+                            177,
+                            30,
+                            237,
+                            28,
+                            213,
+                            210,
+                            240,
+                            70,
+                            200,
+                            182,
+                            177,
+                            99,
+                            129,
+                            196,
+                            232,
+                            14,
+                            129,
+                            115,
+                            82,
+                            193,
+                            107,
+                            111,
+                            42,
+                            134,
+                            135,
+                            88,
+                            155,
+                            181,
+                            100,
+                            191,
+                            75,
+                            60,
+                            135,
+                            164,
+                            82,
+                            132,
+                            219,
+                            154,
+                            130,
+                            64,
+                            128,
+                            80,
+                            2,
+                            132,
+                            106,
+                            6,
+                            124,
+                            140,
+                            206,
+                            181,
+                            2,
+                            144,
+                            210,
+                            167,
+                            153,
+                            144,
+                            125,
+                            251,
+                            246,
+                            235,
+                            4,
+                            50,
+                            82,
+                            143,
+                            65,
+                            60,
+                            92,
+                            201,
+                            19,
+                            240,
+                            35,
+                            3,
+                            116,
+                            37,
+                            0,
+                            98,
+                            192,
+                            39,
+                            102,
+                            66,
+                            64,
+                            229,
+                            163,
+                            168,
+                            87,
+                            75,
+                            137,
+                            20,
+                            242,
+                            98,
+                            22,
+                            206,
+                            240,
+                            118,
+                            206,
+                            206,
+                            4,
+                            66,
+                            122,
+                            72,
+                            145,
+                            55,
+                            234,
+                            90,
+                            172,
+                            252,
+                            212,
+                            70,
+                            130,
+                            116,
+                            50,
+                            193,
+                            140,
+                            255,
+                            94,
+                            49,
+                            175,
+                            15,
+                            57,
+                            153,
+                            182,
+                            10,
+                            48,
+                            57,
+                            37,
+                            8,
+                            47,
+                            221,
+                            177,
+                            83,
+                            85,
+                            19,
+                            214,
+                            177,
+                            49,
+                            73,
+                            127,
+                            0,
+                            51,
+                            151,
+                            253,
+                            30,
+                            164,
+                            213,
+                            140,
+                            36,
+                            100,
+                            2,
+                            97,
+                            225,
+                            194,
+                            5,
+                            243,
+                            58,
+                            131,
+                            253,
+                            238,
+                            157,
+                            140,
+                            72,
+                            166,
+                            56,
+                            249,
+                            137,
+                            39,
+                            206,
+                            254,
+                            66,
+                            199,
+                            221,
+                            56,
+                            82,
+                            198,
+                            42,
+                            214,
+                            46,
+                            202,
+                            116,
+                            164,
+                            23,
+                            222,
+                            121,
+                            41,
+                            7,
+                            85,
+                            104,
+                            155,
+                            58,
+                            109,
+                            25,
+                            228,
+                            65,
+                            82,
+                            105,
+                            90,
+                            88,
+                            114,
+                            73,
+                            31,
+                            2,
+                            3,
+                            1,
+                            0,
+                            1,
+                          ]
                   valid_from:
                     type: string
                     description: The start date of the certificate's validity period
@@ -1924,16 +2256,16 @@ paths:
                     type: string
                     description: The serial number of the certificate
                     example: "0ABA674EF6840EFD177509B0BF82C4A5"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /status:
     get:
       summary: Retrieve website status
@@ -1947,7 +2279,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -1967,16 +2299,16 @@ paths:
                     type: integer
                     description: The HTTP response code
                     example: 302
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /tech-stack:
     get:
       summary: Retrieve technology stack data
@@ -1991,7 +2323,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -2076,16 +2408,16 @@ paths:
                           type: boolean
                           description: Whether the technology is detected at the root path
                           example: true
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /threats:
     get:
       summary: Retrieve threats data
@@ -2099,23 +2431,23 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
               schema:
                 type: object
                 properties: {}
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /tls:
     get:
       summary: Retrieve TLS information for a target
@@ -2130,7 +2462,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -2339,38 +2671,41 @@ paths:
                                   description: List of old failures
                                   items:
                                     type: string
-                                  example: [
-                                    "sha256WithRSAEncryption is not an old certificate signature, use sha1WithRSAEncryption",
-                                    "consider adding ciphers ECDHE-ECDSA-CHACHA20-POLY1305, ECDHE-RSA-CHACHA20-POLY1305, ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, DHE-RSA-AES128-GCM-SHA256, DHE-DSS-AES128-GCM-SHA256, DHE-DSS-AES256-GCM-SHA384, DHE-RSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA384, ECDHE-ECDSA-AES256-SHA, DHE-RSA-AES128-SHA256, DHE-RSA-AES128-SHA, DHE-DSS-AES128-SHA256, DHE-RSA-AES256-SHA256, DHE-DSS-AES256-SHA, DHE-RSA-AES256-SHA, ECDHE-RSA-DES-CBC3-SHA, ECDHE-ECDSA-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, DHE-DSS-AES256-SHA256, DHE-DSS-AES128-SHA, DES-CBC3-SHA, DHE-RSA-CHACHA20-POLY1305, ECDHE-RSA-CAMELLIA256-SHA384, ECDHE-ECDSA-CAMELLIA256-SHA384, DHE-RSA-CAMELLIA256-SHA256, DHE-DSS-CAMELLIA256-SHA256, DHE-RSA-CAMELLIA256-SHA, DHE-DSS-CAMELLIA256-SHA, CAMELLIA256-SHA256, CAMELLIA256-SHA, ECDHE-RSA-CAMELLIA128-SHA256, ECDHE-ECDSA-CAMELLIA128-SHA256, DHE-RSA-CAMELLIA128-SHA256, DHE-DSS-CAMELLIA128-SHA256, DHE-RSA-CAMELLIA128-SHA, DHE-DSS-CAMELLIA128-SHA, CAMELLIA128-SHA256, CAMELLIA128-SHA, DHE-RSA-SEED-SHA, DHE-DSS-SEED-SHA, SEED-SHA",
-                                    "add protocols TLSv1.1, TLSv1, SSLv3",
-                                    "consider enabling OCSP stapling",
-                                    "add cipher DES-CBC3-SHA for backward compatibility"
-                                  ]
+                                  example:
+                                    [
+                                      "sha256WithRSAEncryption is not an old certificate signature, use sha1WithRSAEncryption",
+                                      "consider adding ciphers ECDHE-ECDSA-CHACHA20-POLY1305, ECDHE-RSA-CHACHA20-POLY1305, ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, DHE-RSA-AES128-GCM-SHA256, DHE-DSS-AES128-GCM-SHA256, DHE-DSS-AES256-GCM-SHA384, DHE-RSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA384, ECDHE-ECDSA-AES256-SHA, DHE-RSA-AES128-SHA256, DHE-RSA-AES128-SHA, DHE-DSS-AES128-SHA256, DHE-RSA-AES256-SHA256, DHE-DSS-AES256-SHA, DHE-RSA-AES256-SHA, ECDHE-RSA-DES-CBC3-SHA, ECDHE-ECDSA-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, DHE-DSS-AES256-SHA256, DHE-DSS-AES128-SHA, DES-CBC3-SHA, DHE-RSA-CHACHA20-POLY1305, ECDHE-RSA-CAMELLIA256-SHA384, ECDHE-ECDSA-CAMELLIA256-SHA384, DHE-RSA-CAMELLIA256-SHA256, DHE-DSS-CAMELLIA256-SHA256, DHE-RSA-CAMELLIA256-SHA, DHE-DSS-CAMELLIA256-SHA, CAMELLIA256-SHA256, CAMELLIA256-SHA, ECDHE-RSA-CAMELLIA128-SHA256, ECDHE-ECDSA-CAMELLIA128-SHA256, DHE-RSA-CAMELLIA128-SHA256, DHE-DSS-CAMELLIA128-SHA256, DHE-RSA-CAMELLIA128-SHA, DHE-DSS-CAMELLIA128-SHA, CAMELLIA128-SHA256, CAMELLIA128-SHA, DHE-RSA-SEED-SHA, DHE-DSS-SEED-SHA, SEED-SHA",
+                                      "add protocols TLSv1.1, TLSv1, SSLv3",
+                                      "consider enabling OCSP stapling",
+                                      "add cipher DES-CBC3-SHA for backward compatibility",
+                                    ]
                                 modern:
                                   type: array
                                   nullable: true
                                   description: List of modern failures
                                   items:
                                     type: string
-                                  example: [
-                                    "remove ciphersuites ECDHE-RSA-AES128-SHA, AES128-GCM-SHA256, AES128-SHA256, AES128-SHA, ECDHE-RSA-AES256-SHA, AES256-GCM-SHA384, AES256-SHA256, AES256-SHA",
-                                    "consider adding ciphers ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-CHACHA20-POLY1305, ECDHE-RSA-CHACHA20-POLY1305, ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-ECDSA-AES128-SHA256",
-                                    "consider enabling OCSP stapling",
-                                    "use a certificate of type ecdsa, not RSA"
-                                  ]
+                                  example:
+                                    [
+                                      "remove ciphersuites ECDHE-RSA-AES128-SHA, AES128-GCM-SHA256, AES128-SHA256, AES128-SHA, ECDHE-RSA-AES256-SHA, AES256-GCM-SHA384, AES256-SHA256, AES256-SHA",
+                                      "consider adding ciphers ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-CHACHA20-POLY1305, ECDHE-RSA-CHACHA20-POLY1305, ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-ECDSA-AES128-SHA256",
+                                      "consider enabling OCSP stapling",
+                                      "use a certificate of type ecdsa, not RSA",
+                                    ]
                                 intermediate:
                                   type: array
                                   nullable: true
                                   description: List of intermediate failures
                                   items:
                                     type: string
-                                  example: [
-                                    "consider adding ciphers ECDHE-ECDSA-CHACHA20-POLY1305, ECDHE-RSA-CHACHA20-POLY1305, ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, DHE-RSA-AES128-GCM-SHA256, DHE-RSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA384, ECDHE-ECDSA-AES256-SHA, DHE-RSA-AES128-SHA256, DHE-RSA-AES128-SHA, DHE-RSA-AES256-SHA256, DHE-RSA-AES256-SHA, ECDHE-ECDSA-DES-CBC3-SHA, ECDHE-RSA-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, DES-CBC3-SHA",
-                                    "add protocols TLSv1.1, TLSv1",
-                                    "consider enabling OCSP stapling",
-                                    "increase priority of ECDHE-RSA-AES256-GCM-SHA384 over AES128-SHA",
-                                    "fix ciphersuite ordering, use recommended intermediate ciphersuite"
-                                  ]
+                                  example:
+                                    [
+                                      "consider adding ciphers ECDHE-ECDSA-CHACHA20-POLY1305, ECDHE-RSA-CHACHA20-POLY1305, ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, DHE-RSA-AES128-GCM-SHA256, DHE-RSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA384, ECDHE-ECDSA-AES256-SHA, DHE-RSA-AES128-SHA256, DHE-RSA-AES128-SHA, DHE-RSA-AES256-SHA256, DHE-RSA-AES256-SHA, ECDHE-ECDSA-DES-CBC3-SHA, ECDHE-RSA-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, DES-CBC3-SHA",
+                                      "add protocols TLSv1.1, TLSv1",
+                                      "consider enabling OCSP stapling",
+                                      "increase priority of ECDHE-RSA-AES256-GCM-SHA384 over AES128-SHA",
+                                      "fix ciphersuite ordering, use recommended intermediate ciphersuite",
+                                    ]
                         grade:
                           type: integer
                           description: Mozilla grading worker grade
@@ -2408,17 +2743,18 @@ paths:
                           description: List of reasons for distrust
                           items:
                             type: string
-                          example: [
-                            "path uses a blacklisted cert: C=US, O=VeriSign, Inc., OU=VeriSign Trust Network, OU=(c) 2006 VeriSign, Inc. - For authorized use only, CN=VeriSign Class 3 Public Primary Certification Authority - G5 (id=123)",
-                            "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=187368699) override blacklisting of 123",
-                            "path uses a blacklisted cert: C=US, O=VeriSign, Inc., OU=VeriSign Trust Network, OU=(c) 2006 VeriSign, Inc. - For authorized use only, CN=VeriSign Class 3 Public Primary Certification Authority - G5 (id=188669208)",
-                            "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=187368699) override blacklisting of 188669208",
-                            "path uses a root not trusted by Mozilla: C=IE, O=Baltimore, OU=CyberTrust, CN=Baltimore CyberTrust Root (id=16)",
-                            "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=189284449) override blacklisting of 34174538",
-                            "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=189094508) override blacklisting of 34174538",
-                            "path uses a blacklisted cert: C=US, O=VeriSign, Inc., OU=VeriSign Trust Network, OU=(c) 2008 VeriSign, Inc. - For authorized use only, CN=VeriSign Universal Root Certification Authority (id=124)",
-                            "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=188535492) override blacklisting of 124"
-                          ]
+                          example:
+                            [
+                              "path uses a blacklisted cert: C=US, O=VeriSign, Inc., OU=VeriSign Trust Network, OU=(c) 2006 VeriSign, Inc. - For authorized use only, CN=VeriSign Class 3 Public Primary Certification Authority - G5 (id=123)",
+                              "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=187368699) override blacklisting of 123",
+                              "path uses a blacklisted cert: C=US, O=VeriSign, Inc., OU=VeriSign Trust Network, OU=(c) 2006 VeriSign, Inc. - For authorized use only, CN=VeriSign Class 3 Public Primary Certification Authority - G5 (id=188669208)",
+                              "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=187368699) override blacklisting of 188669208",
+                              "path uses a root not trusted by Mozilla: C=IE, O=Baltimore, OU=CyberTrust, CN=Baltimore CyberTrust Root (id=16)",
+                              "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=189284449) override blacklisting of 34174538",
+                              "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=189094508) override blacklisting of 34174538",
+                              "path uses a blacklisted cert: C=US, O=VeriSign, Inc., OU=VeriSign Trust Network, OU=(c) 2008 VeriSign, Inc. - For authorized use only, CN=VeriSign Universal Root Certification Authority (id=124)",
+                              "whitelisted intermediate C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Global Root G2 (id=188535492) override blacklisting of 124",
+                            ]
                         isDistrusted:
                           type: boolean
                           description: Indicates if the certificate is distrusted
@@ -2435,16 +2771,16 @@ paths:
                     type: object
                     description: Parameters used for the analysis
                     example: {}
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /trace-route:
     get:
       summary: Perform a traceroute to the specified URL
@@ -2458,7 +2794,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -2484,16 +2820,16 @@ paths:
                         - type: boolean
                           description: Indicates if a hop was not found
                           example: false
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /txt-records:
     get:
       summary: Retrieve the TXT records for a specified domain
@@ -2507,7 +2843,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -2521,16 +2857,16 @@ paths:
                   google-site-verification: "qFBMUPljNGHE2S-NwmQmYvxpa58UfmmIidAbJG9BiuM"
                   pinterest-site-verification: "c71cdf6ff37b315830c4af9d98cf2add"
                   protonmail-verification: "2493afe89892e5b986b59415cdb104152c24f29e"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
   /whois:
     get:
       summary: Retrieve WHOIS information for a specified domain
@@ -2544,7 +2880,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -2751,8 +3087,8 @@ paths:
                           email:
                             type: string
                 example:
-                  internicData: 
-                    Domain_Name: "khulnasoft.com"
+                  internicData:
+                    Domain_Name: "AS93.NET"
                     Registry_Domain_ID: "1722029712_DOMAIN_NET-VRSN"
                     Registrar_WHOIS_Server: "whois.cloudflare.com"
                     Registrar_URL: "http://www.cloudflare.com"
@@ -2768,31 +3104,31 @@ paths:
                     _Last_update_of_whois_database: "2024-05-18T13:59:10Z <<< "
                     For_more_information_on_Whois_status_codes_please_visit_https: "//icann.org/epp "
                     NOTICE: "The expiration date displayed in this record is the date the registrar's sponsorship of the domain name registration in the registry is currently set to expire. This date does not necessarily reflect the expiration date of the domain name registrant's agreement with the sponsoring registrar.  Users may consult the sponsoring registrar's Whois database to view the registrar's reported date of expiration for this registration. "
-                    TERMS_OF_USE: "You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated except as reasonably necessary to register domain names or modify existing registrations; the Data in VeriSign Global Registry Services' (\"VeriSign\") Whois database is provided by VeriSign for information purposes only, and to assist persons in obtaining information about or related to a domain name registration record. VeriSign does not guarantee its accuracy. By submitting a Whois query, you agree to abide"
+                    TERMS_OF_USE: 'You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated except as reasonably necessary to register domain names or modify existing registrations; the Data in VeriSign Global Registry Services'' ("VeriSign") Whois database is provided by VeriSign for information purposes only, and to assist persons in obtaining information about or related to a domain name registration record. VeriSign does not guarantee its accuracy. By submitting a Whois query, you agree to abide'
                     by_the_following_terms_of_use: "You agree that you may use this Data only for lawful purposes and that under no circumstances will you use this Data"
                     to: "(1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via e-mail, telephone, or facsimile; or (2) enable high volume, automated, electronic processes that apply to VeriSign (or its computer systems). The compilation, repackaging, dissemination or other use of this Data is expressly prohibited without the prior written consent of VeriSign. You agree not to use electronic processes that are automated and high-volume to access or query the Whois database except as reasonably necessary to register domain names or modify existing registrations. VeriSign reserves the right to restrict your access to the Whois database in its sole discretion to ensure operational stability.  VeriSign may restrict or terminate your access to the Whois database for failure to abide by these terms of use. VeriSign reserves the right to modify these terms at any time.  The Registry database contains ONLY .COM, .NET, .EDU domains and Registrars. "
-                  whoisData: 
-                    domain: 
+                  whoisData:
+                    domain:
                       id: "1722029712_DOMAIN_NET-VRSN"
-                      domain: "khulnasoft.com"
+                      domain: "as93.net"
                       name: "as93"
                       extension: "net"
                       whois_server: "whois.cloudflare.com"
-                      status: 
+                      status:
                         - "clienttransferprohibited"
-                      name_servers: 
+                      name_servers:
                         - "adrian.ns.cloudflare.com"
                         - "alex.ns.cloudflare.com"
                       created_date: "2012-05-22T16:36:05Z"
                       updated_date: "2019-05-07T04:20:11Z"
                       expiration_date: "2025-05-22T16:36:05Z"
-                    registrar: 
+                    registrar:
                       id: "1910"
                       name: "Cloudflare, Inc."
                       phone: "+1.4153197517"
                       email: "registrar-abuse@cloudflare.com"
                       referral_url: "https://www.cloudflare.com"
-                    registrant: 
+                    registrant:
                       name: "DATA REDACTED"
                       organization: "DATA REDACTED"
                       street: "DATA REDACTED"
@@ -2804,8 +3140,8 @@ paths:
                       phone_ext: "DATA REDACTED"
                       fax: "DATA REDACTED"
                       fax_ext: "DATA REDACTED"
-                      email: "https://domaincontact.cloudflareregistrar.com/khulnasoft.com"
-                    administrative: 
+                      email: "https://domaincontact.cloudflareregistrar.com/as93.net"
+                    administrative:
                       name: "DATA REDACTED"
                       organization: "DATA REDACTED"
                       street: "DATA REDACTED"
@@ -2817,8 +3153,8 @@ paths:
                       phone_ext: "DATA REDACTED"
                       fax: "DATA REDACTED"
                       fax_ext: "DATA REDACTED"
-                      email: "https://domaincontact.cloudflareregistrar.com/khulnasoft.com"
-                    technical: 
+                      email: "https://domaincontact.cloudflareregistrar.com/as93.net"
+                    technical:
                       name: "DATA REDACTED"
                       organization: "DATA REDACTED"
                       street: "DATA REDACTED"
@@ -2830,8 +3166,8 @@ paths:
                       phone_ext: "DATA REDACTED"
                       fax: "DATA REDACTED"
                       fax_ext: "DATA REDACTED"
-                      email: "https://domaincontact.cloudflareregistrar.com/khulnasoft.com"
-                    billing: 
+                      email: "https://domaincontact.cloudflareregistrar.com/as93.net"
+                    billing:
                       name: "DATA REDACTED"
                       organization: "DATA REDACTED"
                       street: "DATA REDACTED"
@@ -2843,14 +3179,14 @@ paths:
                       phone_ext: "DATA REDACTED"
                       fax: "DATA REDACTED"
                       fax_ext: "DATA REDACTED"
-                      email: "https://domaincontact.cloudflareregistrar.com/khulnasoft.com"
-        '204':
-          $ref: '#/components/responses/Skipped'
-        '500':
-          $ref: '#/components/responses/Error'
-        '400':
-          $ref: '#/components/responses/MissingParam'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/TooManyRequests'
+                      email: "https://domaincontact.cloudflareregistrar.com/as93.net"
+        "204":
+          $ref: "#/components/responses/Skipped"
+        "500":
+          $ref: "#/components/responses/Error"
+        "400":
+          $ref: "#/components/responses/MissingParam"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"

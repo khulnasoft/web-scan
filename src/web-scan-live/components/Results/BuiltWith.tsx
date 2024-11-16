@@ -1,20 +1,26 @@
-
-import styled from '@emotion/styled';
-import type { TechnologyGroup, Technology } from 'web-scan-live/utils/result-processor';
-import colors from 'web-scan-live/styles/colors';
-import Card from 'web-scan-live/components/Form/Card';
-import Heading from 'web-scan-live/components/Form/Heading';
+import styled from "@emotion/styled";
+import type {
+  TechnologyGroup,
+  Technology,
+} from "web-scan-live/utils/result-processor";
+import colors from "web-scan-live/styles/colors";
+import Card from "web-scan-live/components/Form/Card";
+import Heading from "web-scan-live/components/Form/Heading";
 
 const Outer = styled(Card)`
-  grid-row: span 2
+  grid-row: span 2;
 `;
 
 const Row = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0.25rem;
-  &:not(:last-child) { border-bottom: 1px solid ${colors.primaryTransparent}; }
-  span.lbl { font-weight: bold; }
+  &:not(:last-child) {
+    border-bottom: 1px solid ${colors.primaryTransparent};
+  }
+  span.lbl {
+    font-weight: bold;
+  }
   span.val {
     max-width: 200px;
     white-space: nowrap;
@@ -23,28 +29,38 @@ const Row = styled.div`
   }
 `;
 
-const ListRow = (props: { list: Technology[], title: string }) => {
+const ListRow = (props: { list: Technology[]; title: string }) => {
   const { list, title } = props;
   return (
     <>
-      <Heading as="h3" align="left" color={colors.primary}>{title}</Heading>
-      { list.map((entry: Technology, index: number) => {
+      <Heading as="h3" align="left" color={colors.primary}>
+        {title}
+      </Heading>
+      {list.map((entry: Technology, index: number) => {
         return (
-        <Row key={`${title.toLocaleLowerCase()}-${index}`}><span>{ entry.Name }</span></Row>
-        )}
-      )}
+          <Row key={`${title.toLocaleLowerCase()}-${index}`}>
+            <span>{entry.Name}</span>
+          </Row>
+        );
+      })}
     </>
   );
-}
+};
 
-const BuiltWithCard = (props: { data: TechnologyGroup[]}): JSX.Element => {
+const BuiltWithCard = (props: { data: TechnologyGroup[] }): JSX.Element => {
   // const { created, updated, expires, nameservers } = whois;
   return (
     <Outer>
-      <Heading as="h3" align="left" color={colors.primary}>Technologies</Heading>
-      { props.data.map((group: TechnologyGroup) => {
+      <Heading as="h3" align="left" color={colors.primary}>
+        Technologies
+      </Heading>
+      {props.data.map((group: TechnologyGroup) => {
         return (
-          <ListRow key={group.tag} title={group.tag} list={group.technologies} />
+          <ListRow
+            key={group.tag}
+            title={group.tag}
+            list={group.technologies}
+          />
         );
       })}
       {/* { created && <DataRow lbl="Created" val={formatDate(created)} /> }
@@ -53,6 +69,6 @@ const BuiltWithCard = (props: { data: TechnologyGroup[]}): JSX.Element => {
       { nameservers && <ListRow title="Name Servers" list={nameservers} /> } */}
     </Outer>
   );
-}
+};
 
 export default BuiltWithCard;

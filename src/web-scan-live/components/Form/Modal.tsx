@@ -1,9 +1,9 @@
-import React from 'react';
-import type { ReactNode } from 'react';
-import ReactDOM from 'react-dom';
-import styled from '@emotion/styled';
-import colors from 'web-scan-live/styles/colors';
-import Button from 'web-scan-live/components/Form/Button';
+import React from "react";
+import type { ReactNode } from "react";
+import ReactDOM from "react-dom";
+import styled from "@emotion/styled";
+import colors from "web-scan-live/styles/colors";
+import Button from "web-scan-live/components/Form/Button";
 
 interface ModalProps {
   children: ReactNode;
@@ -22,10 +22,14 @@ const Overlay = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.5s;
-  
+
   @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `;
 
@@ -43,8 +47,14 @@ const ModalWindow = styled.div`
   max-height: 80%;
   overflow-y: auto;
   @keyframes appear {
-    0% {opacity: 0; transform: scale(0.9);}
-    100% {opacity: 1; transform: scale(1);}
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   pre {
     white-space: break-spaces;
@@ -60,17 +70,17 @@ const Modal: React.FC<ModalProps> = ({ children, isOpen, closeModal }) => {
 
   React.useEffect(() => {
     const handleEscPress = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         closeModal();
       }
     };
 
     if (isOpen) {
-      window.addEventListener('keydown', handleEscPress);
+      window.addEventListener("keydown", handleEscPress);
     }
 
     return () => {
-      window.removeEventListener('keydown', handleEscPress);
+      window.removeEventListener("keydown", handleEscPress);
     };
   }, [isOpen, closeModal]);
 
@@ -82,10 +92,12 @@ const Modal: React.FC<ModalProps> = ({ children, isOpen, closeModal }) => {
     <Overlay onClick={handleOverlayClick}>
       <ModalWindow>
         {children}
-        <Button onClick={closeModal} styles="width: fit-content;float: right;">Close</Button>
+        <Button onClick={closeModal} styles="width: fit-content;float: right;">
+          Close
+        </Button>
       </ModalWindow>
     </Overlay>,
-    document.body,
+    document.body
   );
 };
 

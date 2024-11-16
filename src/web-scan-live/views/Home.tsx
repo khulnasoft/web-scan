@@ -1,17 +1,22 @@
-import styled from '@emotion/styled';
-import { type ChangeEvent, type FormEvent, useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation, type NavigateOptions } from 'react-router-dom';
+import styled from "@emotion/styled";
+import { type ChangeEvent, type FormEvent, useState, useEffect } from "react";
+import {
+  Link,
+  useNavigate,
+  useLocation,
+  type NavigateOptions,
+} from "react-router-dom";
 
-import Heading from 'web-scan-live/components/Form/Heading';
-import Input from 'web-scan-live/components/Form/Input'
-import Button from 'web-scan-live/components/Form/Button';
-import { StyledCard } from 'web-scan-live/components/Form/Card';
-import Footer from 'web-scan-live/components/misc/Footer';
-import FancyBackground from 'web-scan-live/components/misc/FancyBackground';
+import Heading from "web-scan-live/components/Form/Heading";
+import Input from "web-scan-live/components/Form/Input";
+import Button from "web-scan-live/components/Form/Button";
+import { StyledCard } from "web-scan-live/components/Form/Card";
+import Footer from "web-scan-live/components/misc/Footer";
+import FancyBackground from "web-scan-live/components/misc/FancyBackground";
 
-import docs from 'web-scan-live/utils/docs';
-import colors from 'web-scan-live/styles/colors';
-import { determineAddressType } from 'web-scan-live/utils/address-type-checker';
+import docs from "web-scan-live/utils/docs";
+import colors from "web-scan-live/styles/colors";
+import { determineAddressType } from "web-scan-live/utils/address-type-checker";
 
 const HomeContainer = styled.section`
   display: flex;
@@ -19,7 +24,7 @@ const HomeContainer = styled.section`
   justify-content: center;
   align-items: center;
   height: 100%;
-  font-family: 'PTMono';
+  font-family: "PTMono";
   padding: 1.5rem 1rem 4rem 1rem;
   footer {
     z-index: 1;
@@ -76,7 +81,9 @@ const SponsorCard = styled.div`
   }
   .cta {
     font-size: 0.78rem;
-    a { color: ${colors.primary}; }
+    a {
+      color: ${colors.primary};
+    }
   }
 `;
 
@@ -109,7 +116,7 @@ const SiteFeaturesWrapper = styled(StyledCard)`
         width: calc(100% - 2rem);
       }
     }
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       flex-wrap: wrap;
     }
   }
@@ -127,7 +134,7 @@ const SiteFeaturesWrapper = styled(StyledCard)`
       break-inside: avoid-column;
     }
     li:before {
-      content: '✓';
+      content: "✓";
       color: ${colors.primary};
       margin-right: 0.5rem;
     }
@@ -138,9 +145,9 @@ const SiteFeaturesWrapper = styled(StyledCard)`
 `;
 
 const Home = (): JSX.Element => {
-  const defaultPlaceholder = 'e.g. https://duck.com/';
-  const [userInput, setUserInput] = useState('');
-  const [errorMsg, setErrMsg] = useState('');
+  const defaultPlaceholder = "e.g. https://duck.com/";
+  const [userInput, setUserInput] = useState("");
+  const [errorMsg, setErrMsg] = useState("");
   const [placeholder] = useState(defaultPlaceholder);
   const [inputDisabled] = useState(false);
   const navigate = useNavigate();
@@ -150,7 +157,7 @@ const Home = (): JSX.Element => {
   /* Redirect strait to results, if somehow we land on /check?url=[] */
   useEffect(() => {
     const query = new URLSearchParams(location.search);
-    const urlFromQuery = query.get('url');
+    const urlFromQuery = query.get("url");
     if (urlFromQuery) {
       navigate(`/check/${encodeURIComponent(urlFromQuery)}`, { replace: true });
     }
@@ -160,31 +167,34 @@ const Home = (): JSX.Element => {
   const submit = () => {
     let address = userInput.endsWith("/") ? userInput.slice(0, -1) : userInput;
     const addressType = determineAddressType(address);
-  
-    if (addressType === 'empt') {
-      setErrMsg('Field must not be empty');
-    } else if (addressType === 'err') {
-      setErrMsg('Must be a valid URL, IPv4 or IPv6 Address');
+
+    if (addressType === "empt") {
+      setErrMsg("Field must not be empty");
+    } else if (addressType === "err") {
+      setErrMsg("Must be a valid URL, IPv4 or IPv6 Address");
     } else {
       // if the addressType is 'url' and address doesn't start with 'http://' or 'https://', prepend 'https://'
-      if (addressType === 'url' && !/^https?:\/\//i.test(address)) {
-        address = 'https://' + address;
+      if (addressType === "url" && !/^https?:\/\//i.test(address)) {
+        address = "https://" + address;
       }
-      const resultRouteParams: NavigateOptions = { state: { address, addressType } };
+      const resultRouteParams: NavigateOptions = {
+        state: { address, addressType },
+      };
       navigate(`/check/${encodeURIComponent(address)}`, resultRouteParams);
     }
   };
-  
 
   /* Update user input state, and hide error message if field is valid */
   const inputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUserInput(event.target.value);
-    const isError = ['err', 'empt'].includes(determineAddressType(event.target.value));
-    if (!isError) setErrMsg('');
+    const isError = ["err", "empt"].includes(
+      determineAddressType(event.target.value)
+    );
+    if (!isError) setErrMsg("");
   };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       event.preventDefault();
       submit();
     }
@@ -193,7 +203,7 @@ const Home = (): JSX.Element => {
   const formSubmitEvent = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     submit();
-  }
+  };
 
   // const findIpAddress = () => {
   //   setUserInput('');
@@ -211,7 +221,6 @@ const Home = (): JSX.Element => {
   //       console.log('Failed to get IP address :\'(', error)
   //     });
   // };
-
 
   return (
     <HomeContainer>
@@ -236,11 +245,20 @@ const Home = (): JSX.Element => {
           handleKeyDown={handleKeyPress}
         />
         {/* <FindIpButton onClick={findIpAddress}>Or, find my IP</FindIpButton> */}
-        { errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
-        <Button type="submit" styles="width: calc(100% - 1rem);" size="large" onClick={submit}>Analyze!</Button>
+        {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
+        <Button
+          type="submit"
+          styles="width: calc(100% - 1rem);"
+          size="large"
+          onClick={submit}
+        >
+          Analyze!
+        </Button>
       </UserInputMain>
       <SponsorCard>
-        <Heading as="h2" size="small" color={colors.primary}>Sponsored by</Heading>
+        <Heading as="h2" size="small" color={colors.primary}>
+          Sponsored by
+        </Heading>
         <div className="inner">
           <p>
             <a
@@ -249,46 +267,69 @@ const Home = (): JSX.Element => {
               href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-scan&utm_source=wcgh"
             >
               Terminal Trove
-            </a> - The $HOME of all things in the terminal.
+            </a>{" "}
+            - The $HOME of all things in the terminal.
             <br />
             <span className="cta">
-              Get updates on the latest CLI/TUI tools via
-              the <a
+              Get updates on the latest CLI/TUI tools via the{" "}
+              <a
                 target="_blank"
                 rel="noreferrer"
                 className="cta"
                 href="https://terminaltrove.com/newsletter?utm_campaign=github&utm_medium=referral&utm_content=web-scan&utm_source=wcgh"
-                >
+              >
                 Terminal Trove newsletter
               </a>
             </span>
-            
           </p>
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-scan&utm_source=wcgh">
-            <img width="120" alt="Terminal Trove" src="https://i.ibb.co/NKtYjJ1/terminal-trove-web-scan.png" />
+            href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-scan&utm_source=wcgh"
+          >
+            <img
+              width="120"
+              alt="Terminal Trove"
+              src="https://i.ibb.co/NKtYjJ1/terminal-trove-web-scan.png"
+            />
           </a>
         </div>
-
       </SponsorCard>
       <SiteFeaturesWrapper>
         <div className="features">
-          <Heading as="h2" size="small" color={colors.primary}>Supported Checks</Heading>
+          <Heading as="h2" size="small" color={colors.primary}>
+            Supported Checks
+          </Heading>
           <ul>
-            {docs.map((doc, index) => (<li key={index}>{doc.title}</li>))}
-            <li><Link to="/about">+ more!</Link></li>
+            {docs.map((doc, index) => (
+              <li key={index}>{doc.title}</li>
+            ))}
+            <li>
+              <Link to="/about">+ more!</Link>
+            </li>
           </ul>
         </div>
         <div className="links">
-          <a target="_blank" rel="noreferrer" href="https://github.com/khulnasoft/web-scan" title="Check out the source code and documentation on GitHub, and get support or contribute">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/khulnasoft/web-scan"
+            title="Check out the source code and documentation on GitHub, and get support or contribute"
+          >
             <Button>View on GitHub</Button>
           </a>
-          <a target="_blank" rel="noreferrer" href="https://app.netlify.com/start/deploy?repository=https://github.com/khulnasoft/web-scan" title="Deploy your own private or public instance of Web-Scan to Netlify">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://app.netlify.com/start/deploy?repository=https://github.com/khulnasoft/web-scan"
+            title="Deploy your own private or public instance of Web-Scan to Netlify"
+          >
             <Button>Deploy your own</Button>
           </a>
-          <Link to="/about#api-documentation" title="View the API documentation, to use Web-Scan programmatically">
+          <Link
+            to="/about#api-documentation"
+            title="View the API documentation, to use Web-Scan programmatically"
+          >
             <Button>API Docs</Button>
           </Link>
         </div>
@@ -296,6 +337,6 @@ const Home = (): JSX.Element => {
       <Footer isFixed={true} />
     </HomeContainer>
   );
-}
+};
 
 export default Home;

@@ -1,10 +1,10 @@
-import styled from '@emotion/styled';
-import type { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import styled from "@emotion/styled";
+import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
-import { StyledCard } from 'web-scan-live/components/Form/Card';
-import Heading from 'web-scan-live/components/Form/Heading';
-import colors from 'web-scan-live/styles/colors';
+import { StyledCard } from "web-scan-live/components/Form/Card";
+import Heading from "web-scan-live/components/Form/Heading";
+import colors from "web-scan-live/styles/colors";
 
 const Header = styled(StyledCard)`
   margin: 1rem auto;
@@ -17,15 +17,17 @@ const Header = styled(StyledCard)`
   width: 95vw;
 `;
 
-const Nav = (props: { children?: ReactNode}) => {
+const Nav = (props: { children?: ReactNode }) => {
   return (
     <Header as="header">
-    <Heading color={colors.primary} size="large">
-      <img width="64" src="/web-scan.png" alt="Web Scan Icon" />
-      <a href="/" target="_self">Web Scan</a>
-    </Heading>
+      <Heading color={colors.primary} size="large">
+        <img width="64" src="/web-scan.png" alt="Web Scan Icon" />
+        <a href="/" target="_self">
+          Web Scan
+        </a>
+      </Heading>
       {props.children && props.children}
-  </Header>
+    </Header>
   );
 };
 

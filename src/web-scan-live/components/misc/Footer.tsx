@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
-import colors from 'web-scan-live/styles/colors';
+import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
+import colors from "web-scan-live/styles/colors";
 
 const StyledFooter = styled.footer`
   bottom: 0;
@@ -23,10 +23,9 @@ const StyledFooter = styled.footer`
   }
   span {
     margin: 0 0.5rem;
-    text-align: center; 
+    text-align: center;
   }
 `;
-
 
 const ALink = styled.a`
   color: ${colors.primary};
@@ -42,21 +41,22 @@ const ALink = styled.a`
 `;
 
 const Footer = (props: { isFixed?: boolean }): JSX.Element => {
-  const licenseUrl = 'https://github.com/khulnasoft/web-scan/blob/master/LICENSE';
-  const authorUrl = 'https://khulnasoft.com';
-  const githubUrl = 'https://github.com/khulnasoft/web-scan';
+  const licenseUrl = "https://github.com/khulnasoft/web-scan/blob/master/LICENSE";
+  const authorUrl = "https://khulnasoft.com";
+  const githubUrl = "https://github.com/khulnasoft/web-scan";
   return (
-  <StyledFooter style={props.isFixed ? {position: 'fixed'} : {}}>
-    <span>
-      View source at <ALink href={githubUrl}>github.com/khulnasoft/web-scan</ALink>
-    </span>
-    <span>
-      <Link to="/about">Web-Scan</Link> is
-      licensed under <ALink href={licenseUrl}>MIT</ALink> -
-      © <ALink href={authorUrl}>KhulnaSoft Ltd</ALink> 2023
-    </span>
-  </StyledFooter>
+    <StyledFooter style={props.isFixed ? { position: "fixed" } : {}}>
+      <span>
+        View source at{" "}
+        <ALink href={githubUrl}>github.com/khulnasoft/web-scan</ALink>
+      </span>
+      <span>
+        <Link to="/about">Web-Scan</Link> is licensed under{" "}
+        <ALink href={licenseUrl}>MIT</ALink> - ©{" "}
+        <ALink href={authorUrl}>KhulnaSoft Ltd</ALink> 2023
+      </span>
+    </StyledFooter>
   );
-}
+};
 
 export default Footer;

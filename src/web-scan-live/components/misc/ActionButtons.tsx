@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import Button from 'web-scan-live/components/Form/Button';
-import colors from 'web-scan-live/styles/colors';
+import styled from "@emotion/styled";
+import Button from "web-scan-live/components/Form/Button";
+import colors from "web-scan-live/styles/colors";
 
 const ActionButtonContainer = styled.div`
   position: absolute;
@@ -13,10 +13,10 @@ const ActionButtonContainer = styled.div`
 `;
 
 interface Action {
-    label: string;
-    icon: string;
-    onClick: () => void;
-};
+  label: string;
+  icon: string;
+  onClick: () => void;
+}
 
 const actionButtonStyles = `
   padding: 0 0.25rem;
@@ -40,18 +40,19 @@ const actionButtonStyles = `
 
 const ActionButtons = (props: { actions: any }): JSX.Element => {
   const actions = props.actions;
-  if (!actions) return (<></>);
+  if (!actions) return <></>;
   return (
     <ActionButtonContainer>
-      { actions.map((action: Action, index: number) => 
+      {actions.map((action: Action, index: number) => (
         <Button
           key={`action-${index}`}
           styles={actionButtonStyles}
           onClick={action.onClick}
-          title={action.label}>
-            {action.icon}
+          title={action.label}
+        >
+          {action.icon}
         </Button>
-      )}
+      ))}
     </ActionButtonContainer>
   );
 };
