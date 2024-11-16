@@ -3,16 +3,16 @@ import {
   Geographies,
   Geography,
   Annotation,
-} from 'react-simple-maps';
+} from "react-simple-maps";
 
-import colors from 'web-scan-live/styles/colors';
-import MapFeatures from 'web-scan-live/assets/data/map-features.json';
+import colors from "web-scan-live/styles/colors";
+import MapFeatures from "web-scan-live/assets/data/map-features.json";
 
 interface Props {
-  lat: number,
-  lon: number,
-  label?: string,
-};
+  lat: number;
+  lon: number;
+  label?: string;
+}
 
 const MapChart = (location: Props) => {
   const { lat, lon, label } = location;
@@ -23,7 +23,7 @@ const MapChart = (location: Props) => {
       projectionConfig={{
         rotate: [0, 0, 0],
         center: [lon + 5, lat - 25],
-        scale: 200
+        scale: 200,
       }}
     >
       <Geographies
@@ -45,7 +45,7 @@ const MapChart = (location: Props) => {
         connectorProps={{
           stroke: colors.textColor,
           strokeWidth: 3,
-          strokeLinecap: "round"
+          strokeLinecap: "round",
         }}
       >
         <text x="-8" textAnchor="end" fill={colors.textColor} fontSize={25}>

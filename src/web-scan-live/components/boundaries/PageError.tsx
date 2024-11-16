@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React from "react";
+import styled from "@emotion/styled";
 
-import colors from 'web-scan-live/styles/colors';
-import Heading from 'web-scan-live/components/Form/Heading';
-import Footer from 'web-scan-live/components/misc/Footer';
-import Nav from 'web-scan-live/components/Form/Nav';
-import Button from 'web-scan-live/components/Form/Button';
-import { StyledCard } from 'web-scan-live/components/Form/Card';
-import { Link } from 'react-router-dom';
+import colors from "web-scan-live/styles/colors";
+import Heading from "web-scan-live/components/Form/Heading";
+import Footer from "web-scan-live/components/misc/Footer";
+import Nav from "web-scan-live/components/Form/Nav";
+import Button from "web-scan-live/components/Form/Button";
+import { StyledCard } from "web-scan-live/components/Form/Card";
+import { Link } from "react-router-dom";
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -48,7 +48,9 @@ const ErrorInner = styled(StyledCard)`
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  h3 { font-size: 6rem; }
+  h3 {
+    font-size: 6rem;
+  }
 `;
 
 const ErrorDetails = styled.div`
@@ -61,7 +63,10 @@ const ErrorMessageText = styled.p`
   color: ${colors.danger};
 `;
 
-class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false, errorCount: 0, errorMessage: null };
@@ -70,21 +75,20 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   static getDerivedStateFromError(err: Error): ErrorBoundaryState {
     return { hasError: true, errorCount: 0, errorMessage: err.message };
   }
-  
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error("Uncaught error:", error, errorInfo);
     console.error(
-      `%cCritical Error%c\n\nRoute or component failed to mount%c:%c\n`
-      +`${this.state.errorCount < 1? 'Will attempt a page reload' : ''}. `
-      + `Error Details:\n${error}\n\n${JSON.stringify(errorInfo || {})}`,
+      `%cCritical Error%c\n\nRoute or component failed to mount%c:%c\n` +
+        `${this.state.errorCount < 1 ? "Will attempt a page reload" : ""}. ` +
+        `Error Details:\n${error}\n\n${JSON.stringify(errorInfo || {})}`,
       `background: ${colors.danger}; color:${colors.background}; padding: 4px 8px; font-size: 16px;`,
       `font-weight: bold; color: ${colors.danger};`,
       `color: ${colors.danger};`,
-      `color: ${colors.warning};`,
+      `color: ${colors.warning};`
     );
     if (this.state.errorCount < 1) {
-      this.setState(prevState => ({ errorCount: prevState.errorCount + 1 }));
+      this.setState((prevState) => ({ errorCount: prevState.errorCount + 1 }));
       window.location.reload();
     }
   }
@@ -95,28 +99,50 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
         <ErrorPageContainer>
           <Nav>
             <HeaderLinkContainer>
-              <Link to="/"><Button>Go back Home</Button></Link>
-              <a target="_blank" rel="noreferrer" href="https://github.com/khulnasoft/web-scan"><Button>View on GitHub</Button></a>
+              <Link to="/">
+                <Button>Go back Home</Button>
+              </Link>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/khulnasoft/web-scan"
+              >
+                <Button>View on GitHub</Button>
+              </a>
             </HeaderLinkContainer>
           </Nav>
           <ErrorInner>
-            <Heading as="h1" size="medium" color={colors.primary}>Something's gone wrong</Heading>
-            <Heading as="h2" size="small" color={colors.textColor}>An unexpected error occurred.</Heading>
-            <Heading as="h3" size="large" color={colors.textColor}>🤯</Heading>
+            <Heading as="h1" size="medium" color={colors.primary}>
+              Something's gone wrong
+            </Heading>
+            <Heading as="h2" size="small" color={colors.textColor}>
+              An unexpected error occurred.
+            </Heading>
+            <Heading as="h3" size="large" color={colors.textColor}>
+              🤯
+            </Heading>
             <ErrorDetails>
               <p>
-                We're sorry this happened.
-                Usually reloading the page will resolve this, but if it doesn't, please raise a bug report.
+                We're sorry this happened. Usually reloading the page will
+                resolve this, but if it doesn't, please raise a bug report.
               </p>
               {this.state.errorMessage && (
-              <p>
-                Below is the error message we received:<br /><br />
-                <ErrorMessageText>{this.state.errorMessage}</ErrorMessageText>
-              </p>
+                <p>
+                  Below is the error message we received:
+                  <br />
+                  <br />
+                  <ErrorMessageText>{this.state.errorMessage}</ErrorMessageText>
+                </p>
               )}
             </ErrorDetails>
-            <Button onClick={() => window.location.reload()}>Reload Page</Button>
-            <a target="_blank" rel="noreferrer" href="github.com/khulnasoft/web-scan/issues/choose">
+            <Button onClick={() => window.location.reload()}>
+              Reload Page
+            </Button>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="github.com/khulnasoft/web-scan/issues/choose"
+            >
               Report Issue
             </a>
           </ErrorInner>

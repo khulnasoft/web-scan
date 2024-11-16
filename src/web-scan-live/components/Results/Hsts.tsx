@@ -1,13 +1,12 @@
+import { Card } from "web-scan-live/components/Form/Card";
+import Row, { type RowProps } from "web-scan-live/components/Form/Row";
 
-import { Card } from 'web-scan-live/components/Form/Card';
-import Row, { type RowProps } from 'web-scan-live/components/Form/Row';
-
-const cardStyles = '';
+const cardStyles = "";
 
 const parseHeader = (headerString: string): RowProps[] => {
-  return headerString.split(';').map((part) => {
+  return headerString.split(";").map((part) => {
     const trimmedPart = part.trim();
-    const equalsIndex = trimmedPart.indexOf('=');
+    const equalsIndex = trimmedPart.indexOf("=");
 
     if (equalsIndex >= 0) {
       return {
@@ -15,28 +14,41 @@ const parseHeader = (headerString: string): RowProps[] => {
         val: trimmedPart.substring(equalsIndex + 1).trim(),
       };
     } else {
-      return { lbl: trimmedPart, val: 'true' };
+      return { lbl: trimmedPart, val: "true" };
     }
   });
 };
 
-const HstsCard = (props: {data: any, title: string, actionButtons: any }): JSX.Element => {
+const HstsCard = (props: {
+  data: any;
+  title: string;
+  actionButtons: any;
+}): JSX.Element => {
   const hstsResults = props.data;
-  const hstsHeaders = hstsResults?.hstsHeader ? parseHeader(hstsResults.hstsHeader) : [];
+  const hstsHeaders = hstsResults?.hstsHeader
+    ? parseHeader(hstsResults.hstsHeader)
+    : [];
   return (
-    <Card heading={props.title} actionButtons={props.actionButtons} styles={cardStyles}>
-      {typeof hstsResults.compatible === 'boolean' && (
-        <Row lbl="HSTS Enabled?" val={hstsResults.compatible ? '✅ Yes' : '❌ No'} />
+    <Card
+      heading={props.title}
+      actionButtons={props.actionButtons}
+      styles={cardStyles}
+    >
+      {typeof hstsResults.compatible === "boolean" && (
+        <Row
+          lbl="HSTS Enabled?"
+          val={hstsResults.compatible ? "✅ Yes" : "❌ No"}
+        />
       )}
-      {hstsHeaders.length > 0 && hstsHeaders.map((header: RowProps, index: number) => {
-        return (
-          <Row lbl={header.lbl} val={header.val} key={`hsts-${index}`} />
-        );
-      })
-      }
-      {hstsResults.message && (<p>{hstsResults.message}</p>)}
+      {hstsHeaders.length > 0 &&
+        hstsHeaders.map((header: RowProps, index: number) => {
+          return (
+            <Row lbl={header.lbl} val={header.val} key={`hsts-${index}`} />
+          );
+        })}
+      {hstsResults.message && <p>{hstsResults.message}</p>}
     </Card>
   );
-}
+};
 
 export default HstsCard;

@@ -1,31 +1,38 @@
-import axios from 'axios';
-import xml2js from 'xml2js';
-import middleware from './_common/middleware.js';
+import axios from "axios";
+import xml2js from "xml2js";
+import middleware from "./_common/middleware.js";
 
 const getGoogleSafeBrowsingResult = async (url) => {
   try {
     const apiKey = process.env.GOOGLE_CLOUD_API_KEY;
     if (!apiKey) {
-      return { error: 'GOOGLE_CLOUD_API_KEY is required for the Google Safe Browsing check' };
+      return {
+        error:
+          "GOOGLE_CLOUD_API_KEY is required for the Google Safe Browsing check",
+      };
     }
     const apiEndpoint = `https://safebrowsing.googleapis.com/v4/threatMatches:find?key=${apiKey}`;
 
     const requestBody = {
       threatInfo: {
         threatTypes: [
-          'MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE', 'POTENTIALLY_HARMFUL_APPLICATION', 'API_ABUSE'
+          "MALWARE",
+          "SOCIAL_ENGINEERING",
+          "UNWANTED_SOFTWARE",
+          "POTENTIALLY_HARMFUL_APPLICATION",
+          "API_ABUSE",
         ],
         platformTypes: ["ANY_PLATFORM"],
         threatEntryTypes: ["URL"],
-        threatEntries: [{ url }]
-      }
+        threatEntries: [{ url }],
+      },
     };
 
     const response = await axios.post(apiEndpoint, requestBody);
     if (response.data && response.data.matches) {
       return {
         unsafe: true,
-        details: response.data.matches
+        details: response.data.matches,
       };
     } else {
       return { unsafe: false };
@@ -38,43 +45,49 @@ const getGoogleSafeBrowsingResult = async (url) => {
 const getUrlHausResult = async (url) => {
   let domain = new URL(url).hostname;
   return await axios({
-    method: 'post',
-    url: 'https://urlhaus-api.abuse.ch/v1/host/',
+    method: "post",
+    url: "https://urlhaus-api.abuse.ch/v1/host/",
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      "Content-Type": "application/x-www-form-urlencoded",
     },
-    data: `host=${domain}`
+    data: `host=${domain}`,
   })
-  .then((x) => x.data)
-  .catch((e) => ({ error: `Request to URLHaus failed, ${e.message}`}));
+    .then((x) => x.data)
+    .catch((e) => ({ error: `Request to URLHaus failed, ${e.message}` }));
 };
-
 
 const getPhishTankResult = async (url) => {
   try {
-    const encodedUrl = Buffer.from(url).toString('base64');
+    const encodedUrl = Buffer.from(url).toString("base64");
     const endpoint = `https://checkurl.phishtank.com/checkurl/?url=${encodedUrl}`;
     const headers = {
-      'User-Agent': 'phishtank/web-scan',
+      "User-Agent": "phishtank/web-scan",
     };
-    const response = await axios.post(endpoint, null, { headers, timeout: 3000 });
-    const parsed = await xml2js.parseStringPromise(response.data, { explicitArray: false });
+    const response = await axios.post(endpoint, null, {
+      headers,
+      timeout: 3000,
+    });
+    const parsed = await xml2js.parseStringPromise(response.data, {
+      explicitArray: false,
+    });
     return parsed.response.results;
   } catch (error) {
     return { error: `Request to PhishTank failed: ${error.message}` };
   }
-}
+};
 
 const getCloudmersiveResult = async (url) => {
   const apiKey = process.env.CLOUDMERSIVE_API_KEY;
   if (!apiKey) {
-    return { error: 'CLOUDMERSIVE_API_KEY is required for the Cloudmersive check' };
+    return {
+      error: "CLOUDMERSIVE_API_KEY is required for the Cloudmersive check",
+    };
   }
   try {
-    const endpoint = 'https://api.cloudmersive.com/virus/scan/website';
+    const endpoint = "https://api.cloudmersive.com/virus/scan/website";
     const headers = {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Apikey': apiKey,
+      "Content-Type": "application/x-www-form-urlencoded",
+      Apikey: apiKey,
     };
     const data = `Url=${encodeURIComponent(url)}`;
     const response = await axios.post(endpoint, data, { headers });
@@ -90,8 +103,15 @@ const threatsHandler = async (url) => {
     const phishTank = await getPhishTankResult(url);
     const cloudmersive = await getCloudmersiveResult(url);
     const safeBrowsing = await getGoogleSafeBrowsingResult(url);
-    if (urlHaus.error && phishTank.error && cloudmersive.error && safeBrowsing.error) {
-      throw new Error(`All requests failed - ${urlHaus.error} ${phishTank.error} ${cloudmersive.error} ${safeBrowsing.error}`);
+    if (
+      urlHaus.error &&
+      phishTank.error &&
+      cloudmersive.error &&
+      safeBrowsing.error
+    ) {
+      throw new Error(
+        `All requests failed - ${urlHaus.error} ${phishTank.error} ${cloudmersive.error} ${safeBrowsing.error}`
+      );
     }
     return JSON.stringify({ urlHaus, phishTank, cloudmersive, safeBrowsing });
   } catch (error) {
