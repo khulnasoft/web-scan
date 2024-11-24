@@ -2775,7 +2775,7 @@ paths:
                     domain: 
                       id: "1722029712_DOMAIN_NET-VRSN"
                       domain: "khulnasoft.com"
-                      name: "as93"
+                      name: "khulnasoft-projects"
                       extension: "net"
                       whois_server: "whois.cloudflare.com"
                       status: 
