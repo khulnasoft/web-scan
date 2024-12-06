@@ -58,5 +58,11 @@ EXPOSE ${PORT:-3000}
 # Set the environment variable CHROME_PATH to specify the path to the Chromium binaries
 ENV CHROME_PATH='/usr/bin/chromium'
 
+RUN npm install pm2 -g
+ENV PM2_PUBLIC_KEY ndbuo62v0m3mlnx
+ENV PM2_SECRET_KEY f7fdpudzk9sg6a0
+
+CMD ["pm2-runtime", "server.js"]
+
 # Define the command executed when the container starts and start the server.js of the Node.js application
 CMD ["yarn", "start"]

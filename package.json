@@ -5,7 +5,7 @@
   "homepage": "https://web-scan.netlify.app",
   "scripts": {
     "start": "node server",
-    "start-pm": "pm2 start server.js -i max",
+    "start-pm": "pm2 link f7fdpudzk9sg6a0 ndbuo62v0m3mlnx",
     "build": "astro check && astro build",
     "dev:vercel": "PLATFORM='vercel' npx vercel dev",
     "dev:netlify": "PLATFORM='netlify' npx netlify dev",

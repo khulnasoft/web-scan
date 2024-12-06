@@ -62,14 +62,14 @@ The aim is to help you easily understand, optimize and secure your website.
 <details>
       <summary>Expand Screenshot</summary>
 
-[![Screenshot](https://raw.githubusercontent.com/khulnasoft/web-scan/master/.github/screenshots/web-scan-screenshot1.png)](https://web-scan.khulnasoft.com/)
+[![Screenshot](https://raw.githubusercontent.com/khulnasoft/web-scan/master/.github/screenshots/web-scan-screenshot1.png)](https://web-scan.netlify.app/)
       
 </details>
 
 [![Screenshot](https://i.ibb.co/r0jXN6s/web-scan.png)](https://github.com/khulnasoft/web-scan/tree/master/.github/screenshots)
 
 ### Live Demo
-A hosted version can be accessed at: **[web-scan.khulnasoft.com](https://web-scan.khulnasoft.com)**
+A hosted version can be accessed at: **[web-scan.netlify.app](https://web-scan.netlify.app)**
 
 ### Mirror
 The source for this repo is mirrored to CodeBerg, available at: **[codeberg.org/khulnasoft-dev/web-scan](https://codeberg.org/khulnasoft-dev/web-scan)**

@@ -87,7 +87,7 @@ jobs:
       uses: chrnorm/deployment-action@v2
       id: deployment_frontend
       with:
-        token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         environment: AWS (Frontend Web UI)
         ref: ${{ github.ref }}
         
