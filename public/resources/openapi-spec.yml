@@ -25,7 +25,7 @@ servers:
     description: Local (Production)
   - url: https://web-scan.netlify.app/api
     description: Public Demo (Vercel)
-  - url: https://web-scan.khulnasoft.com/api
+  - url: https://web-scan.netlify.app/api
     description: Public Demo (Netlify)
 tags:
   - name: Quality & Info
