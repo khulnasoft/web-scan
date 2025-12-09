@@ -1,5 +1,0 @@
-Contact: mailto:info@khulnasoft.com
-Contact: mailto:security@khulnasoft.com
-Expires: 2024-12-31T23:59:00.000Z
-Preferred-Languages: en
-Canonical: /security.txt
